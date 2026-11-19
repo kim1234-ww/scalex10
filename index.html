@@ -256,7 +256,53 @@ footer{margin-top:4.5rem;border-top:1px solid var(--line);padding-block:2.5rem 3
 footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;margin-bottom:1.2rem;color:var(--muted)}
 footer p+p{margin-top:.6rem}
 
+/* Dashboard integrado */
+.dash{display:grid;grid-template-columns:200px 1fr;background:var(--bg2);border:1px solid var(--line2);border-radius:18px;overflow:hidden;box-shadow:0 50px 100px -50px rgba(0,0,0,.9),0 0 90px -40px var(--red-glow)}
+.dash>*{min-width:0}
+.dside{background:var(--panel);border-right:1px solid var(--line);padding:1rem .8rem;display:flex;flex-direction:column;gap:.25rem}
+.dside .db{display:flex;align-items:center;gap:.55rem;font:800 .92rem var(--display);padding:.3rem .5rem 1rem}
+.dside .db i{width:28px;height:28px;border-radius:8px;background:var(--red);display:grid;place-items:center;font:800 .62rem var(--display);font-style:italic;color:#fff}
+.dside a{display:flex;align-items:center;gap:.6rem;font-size:.8rem;color:var(--muted);padding:.5rem .6rem;border-radius:8px;text-decoration:none}
+.dside a svg{width:16px;height:16px}
+.dside a.on{background:var(--red-soft);color:var(--fg)}
+.dside a.on svg{color:var(--red)}
+.dmain{padding:1.1rem;display:grid;gap:.8rem}
+.dtop{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+.dtop b{font:800 1.05rem var(--display)}
+.dtop span{font:500 .7rem var(--mono);color:var(--dim)}
+.live{display:inline-flex;align-items:center;gap:.4rem;font:600 .68rem var(--mono);color:var(--ok);background:rgba(62,207,142,.1);border-radius:6px;padding:.25rem .55rem}
+.live::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ok)}
+.dk{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem}
+.w{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.8rem;min-width:0}
+.w h5{margin:0 0 .6rem;font:600 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim);display:flex;justify-content:space-between;gap:.5rem}
+.w h5 em{font-style:normal;color:var(--red)}
+.dk .w small{display:block;font-size:.68rem;color:var(--dim)}
+.dk .w b{display:block;font:800 1.25rem var(--display);font-variant-numeric:tabular-nums}
+.dk .w .up{font-size:.68rem;color:var(--ok)}
+.dg{display:grid;grid-template-columns:1.4fr 1fr;gap:.6rem}
+.dg3{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.w svg.ch{display:block;width:100%;height:120px}
+.fun{display:grid;gap:.4rem}
+.fun div{display:grid;grid-template-columns:76px 1fr 44px;gap:.5rem;align-items:center;font-size:.72rem;color:var(--muted)}
+.fun i{display:block;height:14px;border-radius:4px;background:linear-gradient(90deg,var(--red),#7A1A1E)}
+.fun em{font-style:normal;font:600 .7rem var(--mono);color:var(--fg);text-align:right}
+.rows{display:grid;gap:.4rem}
+.rows div{display:flex;justify-content:space-between;align-items:center;gap:.6rem;font-size:.74rem;background:var(--bg2);border-radius:8px;padding:.45rem .55rem}
+.rows div span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#D9D5D0}
+.rows div b{flex:none;font:600 .66rem var(--mono);padding:.15rem .4rem;border-radius:5px}
+.on-g{color:var(--ok);background:rgba(62,207,142,.1)}
+.on-r{color:var(--red);background:var(--red-soft)}
+.on-n{color:var(--muted);background:var(--line)}
+.dnote{font:500 .7rem var(--mono);color:var(--dim);text-align:right;margin-top:.7rem}
+.dleg{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.6rem}
+.dleg>div{min-width:0;border-top:2px solid var(--red);padding-top:.7rem}
+.dleg b{display:block;font:800 1rem var(--display);margin-bottom:.25rem}
+.dleg p{font-size:.86rem;color:var(--muted)}
+
 @media (max-width:940px){
+  .dash{grid-template-columns:1fr}.dside{display:none}
+  .dg,.dg3{grid-template-columns:1fr}
+  .dk,.dleg{grid-template-columns:1fr 1fr}
   .links{display:none}
   .hero,.team,.diag,.levers,.calc{grid-template-columns:1fr}
   .apps,.wl{grid-template-columns:1fr 1fr}
@@ -340,7 +386,7 @@ footer p+p{margin-top:.6rem}
     <div class="phone" aria-label="Ejemplo de canal de Telegram con tu marca">
       <div class="screen">
         <div class="notch"></div>
-        <div class="tghead"><span class="av">TM</span><div><b data-i="ph_n">Tu Marca · VIP</b><small data-i="ph_s">canal · 1.248 miembros</small></div></div>
+        <div class="tghead"><span class="av" style="font-style:italic;font-size:.78rem">x10</span><div><b data-i="ph_n">Tu Marca · VIP</b><small data-i="ph_s">canal · 1.248 miembros</small></div></div>
         <div class="msgs">
           <div class="msg"><span class="t" data-i="ph_b">BOT DE BIENVENIDA</span><span data-i="ph_m1">Hola, Andrea 👋 Tu acceso VIP está activo. Aquí tienes tu academia y tu indicador.</span><span class="tm">09:02</span></div>
           <div class="msg"><span class="t" data-i="ph_a">ALERTA AUTOMÁTICA</span><span class="mono">EURUSD · BUY<br>Entry 1.0842 · SL 1.0818<br>TP 1.0890</span><span class="tm">09:15</span></div>
@@ -393,7 +439,7 @@ footer p+p{margin-top:.6rem}
       <div class="panel" role="tabpanel">
         <div data-p="0">
           <span class="k" data-i="k0">Palanca 1</span><h3 data-i="t0">Condiciones</h3><p class="lead" data-i="pl0">Lo que ganas por cada lote que opera tu red.</p>
-          <ul><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0a">Acuerdo directo con TradeQuo</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0b">Comisión por lote según tu volumen</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0c">Red de sub-IBs con su propia estructura</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0d">IB Desk para seguir tus comisiones</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0e">Plan de metas mes a mes</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0f">Programa de fidelidad y referidos</span></li></ul>
+          <ul><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0a">Acuerdo directo con nuestro broker aliado, TradeQuo</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0b">Comisión por lote según tu volumen</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0c">Red de sub-IBs con su propia estructura</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0d">IB Desk para seguir tus comisiones</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0e">Plan de metas mes a mes</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0f">Programa de fidelidad y referidos</span></li></ul>
         </div>
         <div data-p="1" hidden>
           <span class="k" data-i="k1">Palanca 2</span><h3 data-i="t1">Arsenal</h3><p class="lead" data-i="pl1">Herramientas que tus clientes no encuentran en otro lado.</p>
@@ -422,6 +468,76 @@ footer p+p{margin-top:.6rem}
       <div><div class="ic"><svg class="i"><use href="#i-app"/></svg></div><h4 data-i="w4t">Tu propia app</h4><p data-i="w4p">Las 19 apps de XMP Club bajo tu marca, con una sola cuenta para tus clientes.</p></div>
       <div><div class="ic"><svg class="i"><use href="#i-cap"/></svg></div><h4 data-i="w5t">Tu academia</h4><p data-i="w5p">Cursos, lecciones y sesiones en vivo con tu nombre.</p></div>
       <div><div class="ic"><svg class="i"><use href="#i-web"/></svg></div><h4 data-i="w6t">Web y embudos</h4><p data-i="w6p">Una web profesional y embudos conectados a tu link de IB.</p></div>
+    </div>
+  </section>
+
+  <!-- Dashboard integrado -->
+  <section class="block" id="centro">
+    <div class="head"><span class="label" data-i="db_eb">Todo integrado</span><h2 data-i="db_t">Un solo centro de control para todo tu negocio.</h2><p data-i="db_p">Comisiones, clientes, canales, bots, academia, campañas y sub-IBs en un mismo panel con tu marca. No es solo automatizar señales: es tu negocio completo, conectado.</p></div>
+    <div class="dash" aria-label="Ejemplo de panel integrado con tu marca">
+      <aside class="dside">
+        <div class="db"><i>x10</i><span data-i="db_b">Tu Marca</span></div>
+        <a class="on"><svg class="i"><use href="#i-app"/></svg><span data-i="dn1">Resumen</span></a>
+        <a><svg class="i"><use href="#i-users"/></svg><span data-i="dn2">Clientes</span></a>
+        <a><svg class="i"><use href="#i-deal"/></svg><span data-i="dn3">Comisiones</span></a>
+        <a><svg class="i"><use href="#i-send"/></svg><span data-i="dn4">Canales y señales</span></a>
+        <a><svg class="i"><use href="#i-bot"/></svg><span data-i="dn5">Bots e IA</span></a>
+        <a><svg class="i"><use href="#i-cap"/></svg><span data-i="dn6">Academia</span></a>
+        <a><svg class="i"><use href="#i-mega"/></svg><span data-i="dn7">Campañas</span></a>
+        <a><svg class="i"><use href="#i-target"/></svg><span data-i="dn8">Sub-IBs</span></a>
+      </aside>
+      <div class="dmain">
+        <div class="dtop"><div><b data-i="dt_t">Resumen del mes</b><br><span data-i="dt_s">Actualizado hace 2 min</span></div><span class="live" data-i="dt_l">EN VIVO</span></div>
+        <div class="dk">
+          <div class="w"><small data-i="dk1">Clientes activos</small><b>486</b><span class="up">▲ 22%</span></div>
+          <div class="w"><small data-i="dk2">Lotes del mes</small><b>3.940</b><span class="up">▲ 31%</span></div>
+          <div class="w"><small data-i="dk3">Comisión del mes</small><b>$31.5K</b><span class="up">▲ 27%</span></div>
+          <div class="w"><small data-i="dk4">Retención 90 días</small><b>78%</b><span class="up">▲ 9 pts</span></div>
+        </div>
+        <div class="dg">
+          <div class="w"><h5><span data-i="dw1">Volumen y comisiones</span><em data-i="dw1e">6 meses</em></h5>
+            <svg class="ch" viewBox="0 0 400 120" preserveAspectRatio="none" aria-hidden="true">
+              <defs><linearGradient id="dgf" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E5252C" stop-opacity=".4"/><stop offset="1" stop-color="#E5252C" stop-opacity="0"/></linearGradient></defs>
+              <g stroke="#26262B"><line x1="0" y1="30" x2="400" y2="30"/><line x1="0" y1="60" x2="400" y2="60"/><line x1="0" y1="90" x2="400" y2="90"/></g>
+              <g fill="#33333A"><rect x="18" y="80" width="34" height="40" rx="4"/><rect x="84" y="72" width="34" height="48" rx="4"/><rect x="150" y="64" width="34" height="56" rx="4"/><rect x="216" y="52" width="34" height="68" rx="4"/><rect x="282" y="40" width="34" height="80" rx="4"/><rect x="348" y="26" width="34" height="94" rx="4"/></g>
+              <path d="M35 92 L101 84 L167 70 L233 58 L299 38 L365 16 L365 120 L35 120Z" fill="url(#dgf)"/>
+              <path d="M35 92 L101 84 L167 70 L233 58 L299 38 L365 16" fill="none" stroke="#E5252C" stroke-width="2.5"/>
+              <circle cx="365" cy="16" r="4.5" fill="#E5252C"/>
+            </svg></div>
+          <div class="w"><h5><span data-i="dw2">Embudo de conversión</span><em data-i="dw2e">mes</em></h5>
+            <div class="fun">
+              <div><span data-i="df1">Visitas</span><i style="width:100%"></i><em>12.4K</em></div>
+              <div><span data-i="df2">Leads</span><i style="width:62%"></i><em>2.9K</em></div>
+              <div><span data-i="df3">Registros</span><i style="width:38%"></i><em>860</em></div>
+              <div><span data-i="df4">Cuentas</span><i style="width:24%"></i><em>412</em></div>
+              <div><span data-i="df5">Operando</span><i style="width:16%"></i><em>298</em></div>
+            </div></div>
+        </div>
+        <div class="dg3">
+          <div class="w"><h5><span data-i="dw3">Canales y bots</span></h5><div class="rows">
+            <div><span data-i="dr1">Canal VIP · Telegram</span><b class="on-g" data-i="ds_on">ACTIVO</b></div>
+            <div><span data-i="dr2">Bot de bienvenida</span><b class="on-g" data-i="ds_on2">ACTIVO</b></div>
+            <div><span data-i="dr3">Escáner de setups</span><b class="on-r">14 <span data-i="ds_al">alertas</span></b></div>
+            <div><span data-i="dr4">Agente IA</span><b class="on-g">326 <span data-i="ds_ch">chats</span></b></div></div></div>
+          <div class="w"><h5><span data-i="dw4">Academia y eventos</span></h5><div class="rows">
+            <div><span data-i="dr5">Sesión en vivo · 18:00</span><b class="on-r" data-i="ds_hoy">HOY</b></div>
+            <div><span data-i="dr6">Curso: gestión de riesgo</span><b class="on-n">212</b></div>
+            <div><span data-i="dr7">Webinar de captación</span><b class="on-n" data-i="ds_jue">JUE</b></div>
+            <div><span data-i="dr8">Indicador propio · usuarios</span><b class="on-g">391</b></div></div></div>
+          <div class="w"><h5><span data-i="dw5">Red y campañas</span></h5><div class="rows">
+            <div><span data-i="dr9">Sub-IB · Equipo Norte</span><b class="on-g">+640 L</b></div>
+            <div><span data-i="dr10">Sub-IB · Equipo Sur</span><b class="on-g">+410 L</b></div>
+            <div><span data-i="dr11">Campaña Meta Ads</span><b class="on-n">CPL $3.1</b></div>
+            <div><span data-i="dr12">ManyChat «PARTNER»</span><b class="on-g">184</b></div></div></div>
+        </div>
+      </div>
+    </div>
+    <p class="dnote" data-i="db_n">Ejemplo ilustrativo · cifras ficticias</p>
+    <div class="dleg">
+      <div><b data-i="dl1">Ves todo</b><p data-i="dl1p">Comisiones, clientes y campañas en tiempo real, en un solo lugar.</p></div>
+      <div><b data-i="dl2">Todo conectado</b><p data-i="dl2p">Canales, bots, academia y app hablan entre sí y alimentan tu CRM.</p></div>
+      <div><b data-i="dl3">Con tu marca</b><p data-i="dl3p">Tu logo, tus colores y tu dominio. Tus clientes nunca ven el nuestro.</p></div>
+      <div><b data-i="dl4">Con equipo</b><p data-i="dl4p">Detrás de cada widget hay personas que lo configuran y lo mejoran contigo.</p></div>
     </div>
   </section>
 
@@ -645,7 +761,7 @@ const EN = {
  l_eb:"The method",l_t:"The 4 x10 levers.",l_p:"Each lever adds on its own. Together, they multiply. Pick one to see what's included.",
  t0:"Terms",t0s:"What you earn per lot",t1:"Arsenal",t1s:"Your tools under your brand",t2:"Autopilot",t2s:"Bots, funnels and CRM",t3:"Audience",t3s:"More of the right people seeing you",
  k0:"Lever 1",k1:"Lever 2",k2:"Lever 3",k3:"Lever 4",
- pl0:"What you earn for every lot your network trades.",c0a:"Direct agreement with TradeQuo",c0b:"Per-lot commission based on your volume",c0c:"Sub-IB network with its own structure",c0d:"IB Desk to track your commissions",c0e:"Month-by-month targets",c0f:"Loyalty and referral program",
+ pl0:"What you earn for every lot your network trades.",c0a:"Direct agreement with our partner broker, TradeQuo",c0b:"Per-lot commission based on your volume",c0c:"Sub-IB network with its own structure",c0d:"IB Desk to track your commissions",c0e:"Month-by-month targets",c0f:"Loyalty and referral program",
  pl1:"Tools your clients can't find anywhere else.",c1a:"Telegram channels with automatic entries",c1b:"Your own indicator built on your strategy",c1c:"Scanners and alerts",c1d:"TradingView Premium inside your app",c1e:"Copy trading and social ranking",c1f:"Academy and live sessions",c1g:"AI copilot and AI journal",c1h:"News, calendar and analysis",
  pl2:"Your business keeps moving when your phone is off.",c2a:"XMP Club app under your brand",c2b:"Website and sign-up funnels",c2c:"Onboarding via Telegram and WhatsApp",c2d:"ManyChat: comment → DM → sign-up",c2e:"AI agent on Telegram",c2f:"CRM and tracking for every client",
  pl3:"More of the right people seeing your offer every week.",c3a:"Content and personal brand",c3b:"Paid campaigns",c3c:"Ready-to-post content",c3d:"Webinars, events and giveaways",c3e:"Closing scripts",c3f:"Monthly review with the team",
@@ -657,6 +773,14 @@ const EN = {
  w4t:"Your own app",w4p:"All 19 XMP Club apps under your brand, with one account for your clients.",
  w5t:"Your academy",w5p:"Courses, lessons and live sessions under your name.",
  w6t:"Website and funnels",w6p:"A professional website and funnels linked to your IB link.",
+ db_eb:"Fully integrated",db_t:"One control center for your whole business.",db_p:"Commissions, clients, channels, bots, academy, campaigns and sub-IBs in one panel under your brand. It's not just automated signals: it's your whole business, connected.",
+ db_b:"Your Brand",dn1:"Overview",dn2:"Clients",dn3:"Commissions",dn4:"Channels and signals",dn5:"Bots and AI",dn6:"Academy",dn7:"Campaigns",dn8:"Sub-IBs",
+ dt_t:"Monthly overview",dt_s:"Updated 2 min ago",dt_l:"LIVE",dk1:"Active clients",dk2:"Lots this month",dk3:"Commission this month",dk4:"90-day retention",
+ dw1:"Volume and commissions",dw1e:"6 months",dw2:"Conversion funnel",dw2e:"month",df1:"Visits",df2:"Leads",df3:"Sign-ups",df4:"Accounts",df5:"Trading",
+ dw3:"Channels and bots",dr1:"VIP channel · Telegram",ds_on:"ACTIVE",ds_on2:"ACTIVE",dr2:"Welcome bot",dr3:"Setup scanner",ds_al:"alerts",dr4:"AI agent",ds_ch:"chats",
+ dw4:"Academy and events",dr5:"Live session · 6pm",ds_hoy:"TODAY",dr6:"Course: risk management",dr7:"Lead-gen webinar",ds_jue:"THU",dr8:"Own indicator · users",
+ dw5:"Network and campaigns",dr9:"Sub-IB · North Team",dr10:"Sub-IB · South Team",dr11:"Meta Ads campaign",dr12:"ManyChat «PARTNER»",
+ db_n:"Illustrative example · fictional figures",dl1:"See everything",dl1p:"Commissions, clients and campaigns in real time, in one place.",dl2:"All connected",dl2p:"Channels, bots, academy and app talk to each other and feed your CRM.",dl3:"Under your brand",dl3p:"Your logo, your colors and your domain. Your clients never see ours.",dl4:"With a team",dl4p:"Behind every widget there are people who set it up and improve it with you.",
  x_eb:"The 19 apps",x_t:"A complete platform. Ready for your brand.",x_p:"Your clients log in with one account, in the browser or as an app, no downloads.",
  xa:"Trading and AI",xa2:"AI Agent",xb:"Markets",xb1:"Market Analysis",xb2:"News",xb3:"Calendar",xb4:"Dashboard",xc:"Education",xc1:"Academy",xc2:"Events",xc3:"Games",xd:"Community and management",xd1:"Community",xd2:"Loyalty",
  x_n:"Plus direct access to the club's Telegram channels. TradingView is a trademark of its owner. Available apps may vary by plan.",
@@ -711,7 +835,7 @@ const PT = {
  l_eb:"O método",l_t:"As 4 alavancas x10.",l_p:"Cada alavanca soma sozinha. Juntas, multiplicam. Escolha uma para ver o que inclui.",
  t0:"Condições",t0s:"O que você ganha por lote",t1:"Arsenal",t1s:"Suas ferramentas com a sua marca",t2:"Piloto automático",t2s:"Bots, funis e CRM",t3:"Audiência",t3s:"Mais pessoas certas vendo você",
  k0:"Alavanca 1",k1:"Alavanca 2",k2:"Alavanca 3",k3:"Alavanca 4",
- pl0:"O que você ganha por cada lote que sua rede opera.",c0a:"Acordo direto com a TradeQuo",c0b:"Comissão por lote conforme seu volume",c0c:"Rede de sub-IBs com estrutura própria",c0d:"IB Desk para acompanhar suas comissões",c0e:"Plano de metas mês a mês",c0f:"Programa de fidelidade e indicações",
+ pl0:"O que você ganha por cada lote que sua rede opera.",c0a:"Acordo direto com nossa corretora parceira, TradeQuo",c0b:"Comissão por lote conforme seu volume",c0c:"Rede de sub-IBs com estrutura própria",c0d:"IB Desk para acompanhar suas comissões",c0e:"Plano de metas mês a mês",c0f:"Programa de fidelidade e indicações",
  pl1:"Ferramentas que seus clientes não encontram em outro lugar.",c1a:"Canais de Telegram com entradas automáticas",c1b:"Indicador próprio com a sua estratégia",c1c:"Scanners e alertas",c1d:"TradingView Premium dentro do seu app",c1e:"Copy trading e ranking social",c1f:"Academia e sessões ao vivo",c1g:"Copiloto e diário com IA",c1h:"Notícias, calendário e análises",
  pl2:"Seu negócio continua avançando quando você desliga o celular.",c2a:"App do XMP Club com a sua marca",c2b:"Site e funis de cadastro",c2c:"Onboarding por Telegram e WhatsApp",c2d:"ManyChat: comentário → DM → cadastro",c2e:"Agente de IA no Telegram",c2f:"CRM e acompanhamento de cada cliente",
  pl3:"Mais pessoas certas vendo sua oferta toda semana.",c3a:"Conteúdo e marca pessoal",c3b:"Campanhas pagas",c3c:"Peças prontas para publicar",c3d:"Webinars, eventos e sorteios",c3e:"Roteiros de fechamento",c3f:"Revisão mensal com a equipe",
@@ -723,6 +847,14 @@ const PT = {
  w4t:"Seu próprio app",w4p:"Os 19 apps do XMP Club com a sua marca, com uma só conta para seus clientes.",
  w5t:"Sua academia",w5p:"Cursos, aulas e sessões ao vivo com o seu nome.",
  w6t:"Site e funis",w6p:"Um site profissional e funis conectados ao seu link de IB.",
+ db_eb:"Tudo integrado",db_t:"Um só centro de controle para todo o seu negócio.",db_p:"Comissões, clientes, canais, bots, academia, campanhas e sub-IBs em um mesmo painel com a sua marca. Não é só automatizar sinais: é o seu negócio completo, conectado.",
+ db_b:"Sua Marca",dn1:"Resumo",dn2:"Clientes",dn3:"Comissões",dn4:"Canais e sinais",dn5:"Bots e IA",dn6:"Academia",dn7:"Campanhas",dn8:"Sub-IBs",
+ dt_t:"Resumo do mês",dt_s:"Atualizado há 2 min",dt_l:"AO VIVO",dk1:"Clientes ativos",dk2:"Lotes do mês",dk3:"Comissão do mês",dk4:"Retenção 90 dias",
+ dw1:"Volume e comissões",dw1e:"6 meses",dw2:"Funil de conversão",dw2e:"mês",df1:"Visitas",df2:"Leads",df3:"Cadastros",df4:"Contas",df5:"Operando",
+ dw3:"Canais e bots",dr1:"Canal VIP · Telegram",ds_on:"ATIVO",ds_on2:"ATIVO",dr2:"Bot de boas-vindas",dr3:"Scanner de setups",ds_al:"alertas",dr4:"Agente IA",ds_ch:"chats",
+ dw4:"Academia e eventos",dr5:"Sessão ao vivo · 18h",ds_hoy:"HOJE",dr6:"Curso: gestão de risco",dr7:"Webinar de captação",ds_jue:"QUI",dr8:"Indicador próprio · usuários",
+ dw5:"Rede e campanhas",dr9:"Sub-IB · Equipe Norte",dr10:"Sub-IB · Equipe Sul",dr11:"Campanha Meta Ads",dr12:"ManyChat «PARTNER»",
+ db_n:"Exemplo ilustrativo · números fictícios",dl1:"Você vê tudo",dl1p:"Comissões, clientes e campanhas em tempo real, em um só lugar.",dl2:"Tudo conectado",dl2p:"Canais, bots, academia e app conversam entre si e alimentam seu CRM.",dl3:"Com a sua marca",dl3p:"Seu logo, suas cores e seu domínio. Seus clientes nunca veem o nosso.",dl4:"Com equipe",dl4p:"Por trás de cada widget há pessoas que configuram e melhoram com você.",
  x_eb:"Os 19 apps",x_t:"Uma plataforma completa. Pronta para a sua marca.",x_p:"Seus clientes entram com uma só conta, pelo navegador ou como app, sem downloads.",
  xa:"Trading e IA",xa2:"Agente IA",xb:"Mercado",xb1:"Análise de Mercado",xb2:"Notícias",xb3:"Calendário",xb4:"Painel",xc:"Educação",xc1:"Academia",xc2:"Eventos",xc3:"Jogos",xd:"Comunidade e gestão",xd1:"Comunidade",xd2:"Fidelidade",
  x_n:"Além disso, acesso direto aos canais de Telegram do clube. TradingView é uma marca do seu proprietário. Os apps disponíveis podem variar conforme o plano.",
