@@ -1,0 +1,697 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Scale x10 IB Partners</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: columna central de 1120px, secciones numeradas 01–07, timeline roja vertical para el sistema */
+:root{
+  --bg:#09090A; --bg2:#0F0F11; --panel:#141417; --panel2:#1A1A1E; --line:#26262B; --line2:#33333A;
+  --fg:#F4F2EF; --muted:#9B9792; --dim:#6E6A66;
+  --red:#E5252C; --red2:#FF4A50; --red-soft:rgba(229,37,44,.12); --red-glow:rgba(229,37,44,.35);
+  --display:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:radial-gradient(60% 40% at 80% -5%,rgba(229,37,44,.16),transparent 70%),
+  linear-gradient(var(--bg2) 1px,transparent 1px) 0 0/56px 56px,linear-gradient(90deg,var(--bg2) 1px,transparent 1px) 0 0/56px 56px}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;line-height:1.08;letter-spacing:-.025em;margin:0;text-wrap:balance}
+p{margin:0}
+.red{color:var(--red)}
+.muted{color:var(--muted)}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.eyebrow .num{color:var(--red)}
+.eyebrow::before{content:"";width:22px;height:1px;background:var(--red)}
+.pill{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--line2);background:var(--panel);border-radius:999px;padding:.35rem .85rem;font-size:.8rem;color:var(--muted)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px var(--red-soft)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--red);color:#fff;padding:.95rem 1.4rem;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font:700 .98rem var(--display);box-shadow:0 8px 28px -10px var(--red-glow);transition:transform .15s,background .15s}
+.btn:hover{background:var(--red2);transform:translateY(-1px)}
+.btn.ghost{background:var(--panel);border:1px solid var(--line2);color:var(--fg);box-shadow:none}
+.btn.ghost:hover{border-color:var(--red)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* Header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31;background:var(--bg)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(9,9,10,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.75rem}
+.logo{display:flex;align-items:center;gap:.6rem;font:800 1rem var(--display);letter-spacing:-.01em;text-decoration:none}
+.logo .mark{width:30px;height:30px;border-radius:8px;background:var(--red);display:grid;place-items:center;font:800 .8rem var(--display);color:#fff}
+.links{display:flex;gap:1.6rem;font-size:.88rem;color:var(--muted)}
+.links a{text-decoration:none}.links a:hover{color:var(--fg)}
+.navr{display:flex;align-items:center;gap:.7rem}
+.lang{display:flex;border:1px solid var(--line2);border-radius:8px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--muted);font:600 .76rem var(--mono);padding:.42rem .65rem;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--red);color:#fff}
+.nav .btn{padding:.6rem 1rem;font-size:.85rem}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:3.5rem;align-items:center;padding-block:4.5rem 3.5rem}
+.hero>*{min-width:0}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.3rem);margin-top:1.2rem}
+.x10{display:inline-block;color:var(--red);font-style:italic;font-size:1.75em;line-height:.8;letter-spacing:-.04em;padding-right:.08em;text-shadow:0 0 50px var(--red-glow)}
+.hero .sub{font-size:1.13rem;color:var(--muted);max-width:33rem;margin-top:1.3rem}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.hero .note{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin-top:1rem;font-size:.82rem;color:var(--dim)}
+.hero .note span{display:inline-flex;align-items:center;gap:.35rem}
+.hero .note svg{width:14px;height:14px;color:var(--red)}
+
+/* Mockup dashboard */
+.mock{position:relative;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:16px;padding:1rem;box-shadow:0 40px 80px -40px rgba(0,0,0,.9),0 0 0 1px rgba(229,37,44,.06);min-width:0}
+.mock .bar{display:flex;align-items:center;gap:.4rem;padding-bottom:.8rem;border-bottom:1px solid var(--line);margin-bottom:.9rem}
+.mock .bar i{width:9px;height:9px;border-radius:50%;background:var(--line2)}
+.mock .bar span{margin-left:.6rem;font:500 .74rem var(--mono);color:var(--dim)}
+.mock .brandrow{display:flex;justify-content:space-between;align-items:center;margin-bottom:.9rem}
+.mock .yb{display:flex;align-items:center;gap:.5rem;font:700 .9rem var(--display)}
+.mock .yb b{width:22px;height:22px;border-radius:6px;border:1px dashed var(--red);display:grid;place-items:center;font-size:.6rem;color:var(--red)}
+.mock .tag{font:500 .68rem var(--mono);color:var(--red);background:var(--red-soft);padding:.2rem .5rem;border-radius:5px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem}
+.kpi{background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:.7rem;min-width:0}
+.kpi small{display:block;font-size:.68rem;color:var(--dim)}
+.kpi b{font:800 1.15rem var(--display);font-variant-numeric:tabular-nums}
+.kpi em{font-style:normal;font-size:.68rem;color:#3ECF8E}
+.chart{margin-top:.6rem;background:var(--bg2);border:1px solid var(--line);border-radius:10px;padding:.7rem}
+.chart svg{display:block;width:100%;height:110px}
+.feed{display:grid;gap:.45rem;margin-top:.6rem}
+.feed div{display:flex;justify-content:space-between;gap:.6rem;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:9px;padding:.5rem .7rem;font-size:.76rem}
+.feed div span{color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.feed div b{font:600 .7rem var(--mono);color:var(--red);flex:none}
+.mock .disc{position:absolute;right:12px;bottom:-26px;font:500 .66rem var(--mono);color:var(--dim)}
+
+/* Strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:14px;background:var(--panel);margin-block:2rem 0}
+.strip>div{padding:1.2rem 1.3rem;border-right:1px solid var(--line);min-width:0}
+.strip>div:last-child{border-right:0}
+.strip b{display:block;font:800 1.7rem var(--display);font-variant-numeric:tabular-nums}
+.strip span{font-size:.82rem;color:var(--muted)}
+
+section.block{padding-block:5.5rem 0}
+.head{display:flex;flex-direction:column;gap:.9rem;max-width:46rem;margin-bottom:2.6rem}
+.head h2{font-size:clamp(2rem,4vw,3rem)}
+.head p{color:var(--muted);font-size:1.06rem}
+
+/* Dolor */
+.pain{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.pain>div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.4rem;min-width:0}
+.pain .q{font:700 1.08rem var(--display);margin-bottom:.5rem}
+.pain .q::before{content:"“";color:var(--red);margin-right:.1rem}
+.pain .q::after{content:"”";color:var(--red)}
+.pain p{color:var(--muted);font-size:.93rem}
+
+/* Camino */
+.journey{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;position:relative}
+.journey::before{content:"";position:absolute;left:0;right:0;top:22px;height:1px;background:linear-gradient(90deg,var(--red),var(--line2))}
+.journey>div{position:relative;min-width:0}
+.journey .st{width:44px;height:44px;border-radius:12px;background:var(--bg);border:1px solid var(--red);display:grid;place-items:center;color:var(--red);margin-bottom:1rem}
+.journey small{font:500 .72rem var(--mono);color:var(--red);letter-spacing:.1em;text-transform:uppercase}
+.journey h3{font-size:1.25rem;margin:.25rem 0 .45rem}
+.journey p{font-size:.92rem;color:var(--muted)}
+
+/* Sistema timeline */
+.tl{position:relative;display:grid;gap:1rem;padding-left:2.4rem}
+.tl::before{content:"";position:absolute;left:.62rem;top:1.6rem;bottom:1.6rem;width:2px;background:linear-gradient(var(--red),rgba(229,37,44,.12))}
+.pl{position:relative;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px}
+.pl::before{content:"";position:absolute;left:-2.1rem;top:1.75rem;width:14px;height:14px;border-radius:50%;background:var(--red);box-shadow:0 0 0 5px var(--red-soft),0 0 18px var(--red-glow)}
+.pl::after{content:"";position:absolute;left:-1.25rem;top:2.15rem;width:1.25rem;height:1px;background:var(--red)}
+.pl summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:start;padding:1.4rem 1.5rem}
+.pl summary::-webkit-details-marker{display:none}
+.pl .ic{width:44px;height:44px;border-radius:12px;background:var(--red-soft);border:1px solid rgba(229,37,44,.35);display:grid;place-items:center;color:var(--red)}
+.pl h3{font-size:1.55rem}
+.pl .lead{color:var(--muted);margin-top:.3rem;font-family:var(--body);font-weight:400}
+.pl .tg{display:inline-block;margin-left:.5rem;font:500 .66rem var(--mono);color:var(--red);border:1px solid rgba(229,37,44,.4);padding:.15rem .45rem;border-radius:5px;vertical-align:middle;letter-spacing:.06em}
+.plus{width:40px;height:40px;border-radius:10px;border:1px solid rgba(229,37,44,.5);background:var(--red-soft);display:grid;place-items:center;color:var(--red);font-size:1.35rem;transition:transform .2s}
+.pl[open] .plus{transform:rotate(45deg)}
+.pl ul{margin:0;padding:0 1.5rem 1.5rem calc(1.5rem + 44px + 1rem);list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:.6rem 1.6rem}
+.pl li{position:relative;padding-left:1.2rem;color:#D9D5D0;font-size:.95rem}
+.pl li::before{content:"";position:absolute;left:0;top:.78em;width:.7rem;height:1.5px;background:var(--red)}
+.pl li small{display:block;color:var(--dim);font-size:.8rem}
+
+/* Marca blanca */
+.wl{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.wl>div{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.4rem;min-width:0;transition:border-color .2s}
+.wl>div:hover{border-color:rgba(229,37,44,.5)}
+.wl .ic{width:40px;height:40px;border-radius:10px;background:var(--red-soft);display:grid;place-items:center;color:var(--red);margin-bottom:1rem}
+.wl h4{font-size:1.1rem;margin-bottom:.4rem}
+.wl p{font-size:.9rem;color:var(--muted)}
+.wl .feat{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;align-items:center;background:linear-gradient(135deg,rgba(229,37,44,.14),var(--panel) 60%);border-color:rgba(229,37,44,.35)}
+.wl .feat>*{min-width:0}
+.tgm{background:var(--bg);border:1px solid var(--line2);border-radius:12px;padding:.8rem;font-size:.78rem;display:grid;gap:.5rem}
+.tgm .h{display:flex;align-items:center;gap:.5rem;font-weight:600;padding-bottom:.5rem;border-bottom:1px solid var(--line)}
+.tgm .h i{width:24px;height:24px;border-radius:50%;background:var(--red);display:grid;place-items:center;font:800 .62rem var(--display);color:#fff;font-style:normal}
+.tgm .m{background:var(--panel2);border-radius:9px;padding:.55rem .7rem;font-family:var(--mono);font-size:.72rem;line-height:1.55}
+.tgm .m b{color:var(--red)}
+.tgm .ex{font:500 .64rem var(--mono);color:var(--dim)}
+
+/* XMP apps */
+.apps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.apps>div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.2rem;min-width:0}
+.apps h4{font-size:.95rem;display:flex;align-items:center;gap:.5rem;margin-bottom:.8rem;color:var(--fg)}
+.apps h4 span{font:500 .68rem var(--mono);color:var(--red)}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chips span{font-size:.78rem;background:var(--bg2);border:1px solid var(--line2);border-radius:7px;padding:.28rem .55rem;color:#D9D5D0}
+.note-s{font-size:.78rem;color:var(--dim);margin-top:1rem}
+
+/* Equipo */
+.team{display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem;align-items:stretch}
+.team>*{min-width:0}
+.lead-card{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line2);min-height:420px;background:var(--panel)}
+.lead-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.2) contrast(1.05)}
+.lead-card .ov{position:absolute;left:0;right:0;bottom:0;padding:1.4rem;background:linear-gradient(transparent,rgba(9,9,10,.95) 45%)}
+.lead-card .ov b{display:block;font:800 1.5rem var(--display)}
+.lead-card .ov span{color:var(--muted);font-size:.9rem}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-content:start}
+.roles>div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.2rem;min-width:0}
+.roles .ic{color:var(--red);margin-bottom:.6rem}
+.roles h4{font-size:1rem;margin-bottom:.3rem}
+.roles p{font-size:.86rem;color:var(--muted)}
+.quote{grid-column:1/-1;border-left:3px solid var(--red);padding:.4rem 0 .4rem 1rem;font:600 1.15rem/1.4 var(--display)}
+
+/* Antes/después */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.vs>div{border-radius:16px;padding:1.6rem;min-width:0}
+.vs .a{background:var(--panel);border:1px solid var(--line)}
+.vs .b{background:linear-gradient(160deg,rgba(229,37,44,.16),var(--panel) 65%);border:1px solid rgba(229,37,44,.4)}
+.vs h3{font-size:1.2rem;margin-bottom:1rem;display:flex;align-items:center;gap:.6rem}
+.vs ul{list-style:none;margin:0;padding:0;display:grid;gap:.7rem}
+.vs li{display:flex;gap:.65rem;font-size:.95rem}
+.vs .a li{color:var(--muted)}
+.vs li svg{width:18px;height:18px;margin-top:.2rem}
+.vs .a svg{color:var(--dim)}.vs .b svg{color:var(--red)}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.faq details{background:var(--panel);border:1px solid var(--line);border-radius:12px;min-width:0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:1rem;padding:1.1rem 1.2rem;font:700 1rem var(--display)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--red);font-size:1.3rem;line-height:1;flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq p{padding:0 1.2rem 1.2rem;color:var(--muted);font-size:.93rem}
+
+/* Encuesta */
+.qual{display:grid;grid-template-columns:.85fr 1.15fr;gap:2.5rem;align-items:start}
+.qual>*{min-width:0}
+.qual .side ul{list-style:none;margin:1.6rem 0 0;padding:0;display:grid;gap:.8rem}
+.qual .side li{display:flex;gap:.7rem;color:var(--muted);font-size:.95rem}
+.qual .side li svg{color:var(--red);margin-top:.15rem}
+.quiz{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line2);border-radius:18px;padding:1.6rem;box-shadow:0 30px 70px -40px rgba(229,37,44,.35)}
+.prog{display:flex;gap:.35rem;margin-bottom:1.3rem}
+.prog i{flex:1;height:4px;border-radius:4px;background:var(--line2)}
+.prog i.on{background:var(--red)}
+.qs small{font:500 .72rem var(--mono);color:var(--red);letter-spacing:.1em;text-transform:uppercase}
+.qs h3{font-size:1.35rem;margin:.35rem 0 1.1rem}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.opt{text-align:left;background:var(--bg2);border:1px solid var(--line2);border-radius:11px;padding:.85rem 1rem;color:var(--fg);font:500 .93rem var(--body);cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover{border-color:var(--red)}
+.opt[aria-pressed="true"]{border-color:var(--red);background:var(--red-soft)}
+.fields{display:grid;gap:.8rem}
+.fields label{display:grid;gap:.35rem;font-size:.82rem;color:var(--muted)}
+.fields input{background:var(--bg2);border:1px solid var(--line2);color:var(--fg);border-radius:10px;padding:.8rem .9rem;font:1rem var(--body)}
+.qnav{display:flex;justify-content:space-between;align-items:center;gap:1rem;margin-top:1.3rem;flex-wrap:wrap}
+.back{background:none;border:0;color:var(--muted);font:600 .9rem var(--body);cursor:pointer}
+.back:disabled{visibility:hidden}
+.err{font-size:.82rem;color:var(--red2);margin-top:.8rem}
+.res h3{font-size:1.5rem;margin:.4rem 0 .6rem}
+.res p{color:var(--muted)}
+.res .ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.3rem}
+.res .tier{display:inline-block;font:600 .74rem var(--mono);background:var(--red-soft);color:var(--red);padding:.3rem .65rem;border-radius:6px;letter-spacing:.06em}
+
+/* Cierre */
+.final{margin-top:5.5rem;border:1px solid rgba(229,37,44,.35);border-radius:22px;padding:3.2rem 2rem;text-align:center;background:radial-gradient(70% 120% at 50% 0%,rgba(229,37,44,.2),var(--panel) 70%)}
+.final h2{font-size:clamp(1.9rem,4vw,2.8rem);max-width:40rem;margin:0 auto}
+.final p{color:var(--muted);margin:1rem auto 0;max-width:34rem}
+.final .ctas{display:flex;justify-content:center;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
+
+footer{margin-top:4.5rem;border-top:1px solid var(--line);padding-block:2.5rem 3rem;font-size:.78rem;color:var(--dim)}
+footer .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;margin-bottom:1.2rem;color:var(--muted)}
+footer p+p{margin-top:.6rem}
+
+@media (max-width:940px){
+  .links{display:none}
+  .hero,.team,.qual{grid-template-columns:1fr}
+  .journey,.apps{grid-template-columns:1fr 1fr}
+  .journey::before{display:none}
+  .wl{grid-template-columns:1fr 1fr}
+  .strip{grid-template-columns:1fr 1fr}
+  .strip>div:nth-child(2){border-right:0}
+  .strip>div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .pain{grid-template-columns:1fr}
+}
+@media (max-width:620px){
+  .nav .btn{display:none}
+  .journey,.apps,.wl,.roles,.vs,.faq,.opts{grid-template-columns:1fr}
+  .wl .feat{grid-column:auto;grid-template-columns:1fr}
+  .pl ul{grid-template-columns:1fr;padding-left:1.5rem}
+  .pl summary{grid-template-columns:1fr auto}
+  .pl .ic{display:none}
+  .tl{padding-left:1.8rem}
+  .pl::before{left:-1.6rem}.pl::after{display:none}
+  .tl::before{left:.35rem}
+  .kpis{grid-template-columns:1fr 1fr}
+  .kpis .kpi:last-child{display:none}
+  .final{padding:2.4rem 1.2rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-chk" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-deal" viewBox="0 0 24 24"><path d="M3 7h18v10H3zM7 7V5h10v2M3 12h18"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 20h18M6 16l4-5 3 3 5-7"/></symbol>
+  <symbol id="i-cog" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2M14 4c3-1 6-1 6-1s0 3-1 6l-7 7-5-5zM9 15l-2-2"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></symbol>
+  <symbol id="i-scan" viewBox="0 0 24 24"><path d="M3 7V3h4M17 3h4v4M21 17v4h-4M7 21H3v-4M7 12h10"/></symbol>
+  <symbol id="i-ind" viewBox="0 0 24 24"><path d="M3 17l5-6 4 4 4-7 5 5"/><circle cx="8" cy="11" r="1.4"/><circle cx="16" cy="8" r="1.4"/></symbol>
+  <symbol id="i-app" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5zM6 11v5c3 2 9 2 12 0v-5"/></symbol>
+  <symbol id="i-web" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/></symbol>
+  <symbol id="i-bot" viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-loop" viewBox="0 0 24 24"><path d="M17 2l4 4-4 4M3 11V9a3 3 0 0 1 3-3h15M7 22l-4-4 4-4M21 13v2a3 3 0 0 1-3 3H3"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6M16 4.5a3.5 3.5 0 0 1 0 7M22 20c0-3-2-5-5-5.7"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4 20h4L19 9l-4-4L4 16zM14 6l4 4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+</svg>
+
+</head><body><header><div class="wrap nav">
+  <a class="logo" href="#top"><span>Scale x10</span></a>
+  <nav class="links">
+    <a href="#sistema" data-i="n1">El sistema</a><a href="#marca-blanca" data-i="n2">Marca blanca</a><a href="#equipo" data-i="n3">Equipo</a><a href="#preguntas" data-i="n4">Preguntas</a>
+  </nav>
+  <div class="navr">
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button type="button" id="lang-es" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <a class="btn" href="#califica" data-i="n_cta">¿Calificas?</a>
+  </div>
+</div></header>
+
+<main id="top">
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <span class="pill"><span class="dot"></span><span data-i="h_pill">Programa de partners para IBs</span></span>
+      <h1><span data-i="h_t1">Let me scale your IB business</span> <span class="x10">x10</span>.</h1>
+      <p class="sub" data-i="h_sub">Tú ya tienes la comunidad. Nosotros ponemos el sistema completo detrás: mejores condiciones, herramientas premium con tu marca, automatización y un equipo que trabaja para que tu volumen crezca.</p>
+      <div class="ctas">
+        <a class="btn" href="#califica"><span data-i="h_cta">Haz el test de 60 segundos</span> <svg class="i"><use href="#i-send"/></svg></a>
+        <a class="btn ghost" href="#" data-cal><svg class="i"><use href="#i-cal"/></svg> <span data-i="h_cta2">Reservar una llamada</span></a>
+      </div>
+      <div class="note">
+        <span><svg class="i"><use href="#i-clock"/></svg><span data-i="h_n1">4 preguntas</span></span>
+        <span><svg class="i"><use href="#i-lock"/></svg><span data-i="h_n2">Sin compromiso</span></span>
+        <span><svg class="i"><use href="#i-chk"/></svg><span data-i="h_n3">Respuesta por Telegram</span></span>
+      </div>
+    </div>
+
+    <div class="mock" aria-label="Ejemplo de panel de IB con tu marca">
+      <div class="bar"><i></i><i></i><i></i><span>app.tumarca.com/ib</span></div>
+      <div class="brandrow"><div class="yb"><b>LOGO</b><span data-i="mk_b">Tu Marca · Panel IB</span></div><span class="tag" data-i="mk_t">MARCA BLANCA</span></div>
+      <div class="kpis">
+        <div class="kpi"><small data-i="mk_k1">Clientes activos</small><b>248</b> <em>+18%</em></div>
+        <div class="kpi"><small data-i="mk_k2">Lotes del mes</small><b>1.920</b> <em>+24%</em></div>
+        <div class="kpi"><small data-i="mk_k3">Sub-IBs</small><b>12</b> <em>+3</em></div>
+      </div>
+      <div class="chart">
+        <svg viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true">
+          <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E5252C" stop-opacity=".45"/><stop offset="1" stop-color="#E5252C" stop-opacity="0"/></linearGradient></defs>
+          <g stroke="#26262B" stroke-width="1"><line x1="0" y1="27" x2="300" y2="27"/><line x1="0" y1="55" x2="300" y2="55"/><line x1="0" y1="83" x2="300" y2="83"/></g>
+          <path d="M0 95 L30 90 L60 92 L90 80 L120 82 L150 66 L180 60 L210 48 L240 38 L270 24 L300 12 L300 110 L0 110Z" fill="url(#g)"/>
+          <path d="M0 95 L30 90 L60 92 L90 80 L120 82 L150 66 L180 60 L210 48 L240 38 L270 24 L300 12" fill="none" stroke="#E5252C" stroke-width="2.4"/>
+          <circle cx="300" cy="12" r="4" fill="#E5252C"/>
+        </svg>
+      </div>
+      <div class="feed">
+        <div><span data-i="mk_f1">Nuevo registro desde Telegram</span><b>BOT</b></div>
+        <div><span data-i="mk_f2">Alerta del escáner enviada al canal VIP</span><b>AUTO</b></div>
+      </div>
+      <span class="disc" data-i="mk_d">Ejemplo ilustrativo · cifras ficticias</span>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div><b>19</b><span data-i="st1">apps premium con tu marca</span></div>
+    <div><b>4</b><span data-i="st2">áreas de trabajo en un solo sistema</span></div>
+    <div><b>24/7</b><span data-i="st3">canales y bots trabajando por ti</span></div>
+    <div><b>1</b><span data-i="st4">equipo dedicado a tu crecimiento</span></div>
+  </div>
+
+  <!-- Dolor -->
+  <section class="block">
+    <div class="head"><span class="eyebrow" data-i="p_eb">¿Te suena?</span><h2 data-i="p_t">Demostraste que funciona. Ahora lo que te frena es la estructura.</h2><p data-i="p_p">Cada mes que creces a mano, dejas volumen sobre la mesa. No es falta de ganas: es falta de sistema.</p></div>
+    <div class="pain">
+      <div><p class="q" data-i="pa1q">Respondo DMs todo el día y aun así se me escapan clientes.</p><p data-i="pa1">El seguimiento manual tiene techo. Cuando creces, se rompe.</p></div>
+      <div><p class="q" data-i="pa2q">Mis clientes se registran, operan un mes y desaparecen.</p><p data-i="pa2">Sin productos que les den valor diario, la retención se cae.</p></div>
+      <div><p class="q" data-i="pa3q">Siento que mi broker me paga menos de lo que vale mi comunidad.</p><p data-i="pa3">Con la estructura correcta, el mismo volumen puede pagarte más.</p></div>
+    </div>
+  </section>
+
+  <!-- 01 Camino -->
+  <section class="block">
+    <div class="head"><span class="eyebrow"><span class="num">01</span> <span data-i="j_eb">El camino x10</span></span><h2 data-i="j_t">Cuatro etapas. Cada una multiplica la siguiente.</h2></div>
+    <div class="journey">
+      <div><div class="st"><svg class="i"><use href="#i-eye"/></svg></div><small data-i="j1s">Etapa 1</small><h3 data-i="j1t">Hazte visible</h3><p data-i="j1p">Contenido, anuncios y una marca que atrae a los traders correctos.</p></div>
+      <div><div class="st"><svg class="i"><use href="#i-target"/></svg></div><small data-i="j2s">Etapa 2</small><h3 data-i="j2t">Diferénciate</h3><p data-i="j2p">Una oferta que nadie más tiene: tus señales, tu indicador, tu app.</p></div>
+      <div><div class="st"><svg class="i"><use href="#i-bolt"/></svg></div><small data-i="j3s">Etapa 3</small><h3 data-i="j3t">Convierte más rápido</h3><p data-i="j3p">Bots y embudos que llevan al interesado de un comentario a una cuenta activa.</p></div>
+      <div><div class="st"><svg class="i"><use href="#i-loop"/></svg></div><small data-i="j4s">Etapa 4</small><h3 data-i="j4t">Retén y escala</h3><p data-i="j4p">Valor diario para tus clientes, sub-IBs y un equipo que acompaña cada mes.</p></div>
+    </div>
+  </section>
+
+  <!-- 02 Sistema -->
+  <section class="block" id="sistema">
+    <div class="head"><span class="eyebrow"><span class="num">02</span> <span data-i="s_eb">El sistema</span></span><h2 data-i="s_t">Todo lo que hay detrás de un IB que escala.</h2><p data-i="s_p">Cuatro áreas trabajando juntas. Tú decides cuáles activar primero.</p></div>
+    <div class="tl">
+      <details class="pl" open><summary><span class="ic"><svg class="i"><use href="#i-deal"/></svg></span><div><h3 data-i="c1t">Comercial</h3><p class="lead" data-i="c1l">El acuerdo sobre el que se apoya todo lo demás.</p></div><span class="plus" aria-hidden="true">+</span></summary>
+        <ul><li data-i="c1a">Relación directa con el broker (TradeQuo)</li><li data-i="c1b">Estructura de pago por lote</li><li data-i="c1c">Configuración de IB y sub-IB</li><li data-i="c1d">Estrategia de ingresos y metas mensuales</li><li data-i="c1e">Panel IB Desk para ver tu red y tus comisiones</li><li data-i="c1f">Programa de fidelidad y referidos para tus clientes</li></ul></details>
+      <details class="pl" open><summary><span class="ic"><svg class="i"><use href="#i-chart"/></svg></span><div><h3><span data-i="c2t">Productos para tus clientes</span><span class="tg" data-i="tg">TU MARCA</span></h3><p class="lead" data-i="c2l">Lo que recibe tu comunidad desde el primer día.</p></div><span class="plus" aria-hidden="true">+</span></summary>
+        <ul><li data-i="c2a">Canales de Telegram con entradas automatizadas</li><li data-i="c2b">Indicador propio creado con tu estrategia</li><li data-i="c2c">Escáneres de mercado y alertas</li><li data-i="c2d">TradingView Premium dentro de tu app</li><li data-i="c2e">Copy trading y ranking de social trading</li><li data-i="c2f">Academia, cursos y sesiones en vivo por Zoom</li><li data-i="c2g">Copiloto de trading con IA y journal con IA</li><li data-i="c2h">Noticias, calendario económico y análisis de mercado</li></ul></details>
+      <details class="pl" open><summary><span class="ic"><svg class="i"><use href="#i-cog"/></svg></span><div><h3 data-i="c3t">Infraestructura</h3><p class="lead" data-i="c3l">Lo que nadie ve y de lo que depende todo.</p></div><span class="plus" aria-hidden="true">+</span></summary>
+        <ul><li data-i="c3a">App de XMP Club con tu marca (19 apps)</li><li data-i="c3b">Web y embudos de registro</li><li data-i="c3c">Onboarding automático por Telegram y WhatsApp</li><li data-i="c3d">Automatizaciones con ManyChat (comentario → DM → registro)</li><li data-i="c3e">Agente de IA en Telegram para tus clientes</li><li data-i="c3f">CRM y seguimiento de cada cliente</li></ul></details>
+      <details class="pl" open><summary><span class="ic"><svg class="i"><use href="#i-rocket"/></svg></span><div><h3 data-i="c4t">Crecimiento</h3><p class="lead" data-i="c4l">De dónde sale tu próximo cliente.</p></div><span class="plus" aria-hidden="true">+</span></summary>
+        <ul><li data-i="c4a">Estrategia de contenido y marca personal</li><li data-i="c4b">Publicidad pagada</li><li data-i="c4c">UGC y piezas listas para publicar</li><li data-i="c4d">Eventos, webinars y sorteos de captación</li><li data-i="c4e">Setters y guiones de cierre</li><li data-i="c4f">Acompañamiento mensual con el equipo</li></ul></details>
+    </div>
+  </section>
+
+  <!-- 03 Marca blanca -->
+  <section class="block" id="marca-blanca">
+    <div class="head"><span class="eyebrow"><span class="num">03</span> <span data-i="w_eb">Marca blanca</span></span><h2 data-i="w_t">Tu comunidad ve tu marca. Nunca la nuestra.</h2><p data-i="w_p">Creamos cada herramienta con tu nombre, tu logo y tus colores. Para tus clientes, todo es tuyo.</p></div>
+    <div class="wl">
+      <div class="feat">
+        <div><div class="ic"><svg class="i"><use href="#i-send"/></svg></div><h4 data-i="w1t">Canales de Telegram que trabajan solos</h4><p data-i="w1p">Configuramos tus canales para publicar entradas, gestionar el acceso VIP y dar la bienvenida a cada cliente nuevo de forma automática.</p></div>
+        <div class="tgm" aria-hidden="true">
+          <div class="h"><i>TM</i><span data-i="tg_h">Tu Marca · VIP</span></div>
+          <div class="m"><b>XAUUSD · BUY</b><br>Entry 2.418 · SL 2.409<br>TP1 2.430 · TP2 2.442</div>
+          <div class="m" data-i="tg_m">👋 Bienvenido/a. Tu acceso VIP está activo.</div>
+          <span class="ex" data-i="tg_ex">Ejemplo ilustrativo, no es una recomendación</span>
+        </div>
+      </div>
+      <div><div class="ic"><svg class="i"><use href="#i-ind"/></svg></div><h4 data-i="w2t">Un indicador con tu estrategia</h4><p data-i="w2p">Convertimos tu forma de operar en un indicador propio para TradingView que solo tienen tus clientes.</p></div>
+      <div><div class="ic"><svg class="i"><use href="#i-scan"/></svg></div><h4 data-i="w3t">Escáneres y alertas</h4><p data-i="w3p">Escáneres que detectan tus setups y envían alertas a tus canales.</p></div>
+      <div><div class="ic"><svg class="i"><use href="#i-app"/></svg></div><h4 data-i="w4t">Tu propia app</h4><p data-i="w4p">Las 19 apps de XMP Club bajo tu marca, con una sola cuenta para tus clientes.</p></div>
+      <div><div class="ic"><svg class="i"><use href="#i-cap"/></svg></div><h4 data-i="w5t">Tu academia</h4><p data-i="w5p">Cursos, lecciones y sesiones en vivo publicados con tu nombre.</p></div>
+      <div><div class="ic"><svg class="i"><use href="#i-web"/></svg></div><h4 data-i="w6t">Web y embudos</h4><p data-i="w6p">Una web profesional y embudos de registro conectados a tu link de IB.</p></div>
+      <div><div class="ic"><svg class="i"><use href="#i-bot"/></svg></div><h4 data-i="w7t">Bots e IA</h4><p data-i="w7p">Agente de IA en Telegram y automatizaciones que responden por ti.</p></div>
+      <div><div class="ic"><svg class="i"><use href="#i-copy"/></svg></div><h4 data-i="w8t">Copy trading</h4><p data-i="w8p">Tus clientes pueden copiar a traders con historial público.</p></div>
+    </div>
+  </section>
+
+  <!-- 04 XMP -->
+  <section class="block">
+    <div class="head"><span class="eyebrow"><span class="num">04</span> <span data-i="x_eb">Las 19 apps</span></span><h2 data-i="x_t">Una plataforma completa. Lista para tu marca.</h2><p data-i="x_p">Tus clientes entran con una sola cuenta, desde el navegador o como app, sin descargas.</p></div>
+    <div class="apps">
+      <div><h4><span>A</span> <b data-i="xa">Trading e IA</b></h4><div class="chips"><span>TradingView Premium</span><span>Quant</span><span>Trading AI Assistance</span><span data-i="xa2">Agente IA en Telegram</span><span>Trading Calculator</span></div></div>
+      <div><h4><span>B</span> <b data-i="xb">Mercado</b></h4><div class="chips"><span data-i="xb1">Análisis de Mercado</span><span data-i="xb2">Noticias</span><span data-i="xb3">Calendario económico</span><span data-i="xb4">Panel</span></div></div>
+      <div><h4><span>C</span> <b data-i="xc">Educación</b></h4><div class="chips"><span data-i="xc1">Academia</span><span>Zoom</span><span data-i="xc2">Eventos</span><span data-i="xc3">Juegos</span></div></div>
+      <div><h4><span>D</span> <b data-i="xd">Comunidad y gestión</b></h4><div class="chips"><span data-i="xd1">Comunidad</span><span>Telegram Access</span><span data-i="xd2">Fidelidad</span><span>Journal</span><span>Social Trading</span><span>IB Desk</span><span>Optimus Prime</span></div></div>
+    </div>
+    <p class="note-s" data-i="x_n">TradingView es una marca de su propietario. Las apps disponibles pueden variar según el plan.</p>
+  </section>
+
+  <!-- 05 Equipo -->
+  <section class="block" id="equipo">
+    <div class="head"><span class="eyebrow"><span class="num">05</span> <span data-i="e_eb">Quién está detrás</span></span><h2 data-i="e_t">Una cara que conoces. Un equipo que ejecuta.</h2></div>
+    <div class="team">
+      <div class="lead-card">
+        <img src="fotos/trabaja.jpg" alt="Kimberly" onerror="this.remove()">
+        <div class="ov"><b>Kimberly</b><span data-i="e_role">Lidera la estrategia de partners · 7 años en los mercados</span></div>
+      </div>
+      <div class="roles">
+        <div><div class="ic"><svg class="i"><use href="#i-target"/></svg></div><h4 data-i="r1t">Estrategia y cuentas</h4><p data-i="r1p">Diseña tu plan, tus metas y tu estructura de IB y sub-IB.</p></div>
+        <div><div class="ic"><svg class="i"><use href="#i-cog"/></svg></div><h4 data-i="r2t">Tecnología y automatización</h4><p data-i="r2p">Monta tus canales, bots, indicadores, escáneres y tu app.</p></div>
+        <div><div class="ic"><svg class="i"><use href="#i-pen"/></svg></div><h4 data-i="r3t">Contenido y crecimiento</h4><p data-i="r3p">Crea las piezas, campañas y eventos que traen clientes.</p></div>
+        <div><div class="ic"><svg class="i"><use href="#i-users"/></svg></div><h4 data-i="r4t">Onboarding y soporte</h4><p data-i="r4p">Acompaña a tus clientes desde el registro hasta su primera operación.</p></div>
+        <p class="quote" data-i="e_q">“Mi trabajo es que tú te enfoques en tu comunidad. Del sistema nos encargamos nosotros.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Antes/después -->
+  <section class="block">
+    <div class="head"><span class="eyebrow"><span class="num">06</span> <span data-i="v_eb">La diferencia</span></span><h2 data-i="v_t">Así se ve tu negocio antes y después del sistema.</h2></div>
+    <div class="vs">
+      <div class="a"><h3 data-i="va">Hoy, sin sistema</h3><ul>
+        <li><svg class="i"><use href="#i-x"/></svg><span data-i="va1">Respondes cada DM a mano</span></li>
+        <li><svg class="i"><use href="#i-x"/></svg><span data-i="va2">Compartes herramientas de otros</span></li>
+        <li><svg class="i"><use href="#i-x"/></svg><span data-i="va3">Tus clientes se van al primer mes malo</span></li>
+        <li><svg class="i"><use href="#i-x"/></svg><span data-i="va4">Tu ingreso depende de tus horas</span></li>
+        <li><svg class="i"><use href="#i-x"/></svg><span data-i="va5">Creces solo/a y sin plan</span></li></ul></div>
+      <div class="b"><h3 data-i="vb">Con el sistema x10</h3><ul>
+        <li><svg class="i"><use href="#i-chk"/></svg><span data-i="vb1">Bots y embudos convierten mientras duermes</span></li>
+        <li><svg class="i"><use href="#i-chk"/></svg><span data-i="vb2">Ofreces herramientas premium con tu marca</span></li>
+        <li><svg class="i"><use href="#i-chk"/></svg><span data-i="vb3">Tus clientes reciben valor todos los días</span></li>
+        <li><svg class="i"><use href="#i-chk"/></svg><span data-i="vb4">Tu ingreso crece con el volumen de tu red</span></li>
+        <li><svg class="i"><use href="#i-chk"/></svg><span data-i="vb5">Un equipo te acompaña cada mes</span></li></ul></div>
+    </div>
+  </section>
+
+  <!-- 07 FAQ -->
+  <section class="block" id="preguntas">
+    <div class="head"><span class="eyebrow"><span class="num">07</span> <span data-i="q_eb">Preguntas</span></span><h2 data-i="q_t">Respuestas claras, antes de hablar.</h2></div>
+    <div class="faq">
+      <details><summary data-i="q1">¿Necesito experiencia como IB?</summary><p data-i="a1">No. Si empiezas desde cero, armamos contigo la oferta, la marca y el proceso antes de salir a buscar clientes.</p></details>
+      <details><summary data-i="q2">¿Qué significa marca blanca?</summary><p data-i="a2">Que la app, los canales, el indicador, la academia y la web salen con tu nombre y tu imagen. Tu comunidad ve tu marca.</p></details>
+      <details><summary data-i="q3">¿Cuánto tarda en estar todo listo?</summary><p data-i="a3">Depende de lo que actives. En la llamada te damos un plan con fechas para cada parte.</p></details>
+      <details><summary data-i="q4">¿Cómo gano dinero?</summary><p data-i="a4">Con comisiones por el volumen que opera tu comunidad. Revisamos tu estructura por lote y de sub-IBs en la llamada.</p></details>
+      <details><summary data-i="q5">¿Puedo cambiarme si ya soy IB de otro broker?</summary><p data-i="a5">Sí. Estudiamos tu caso y planeamos la transición para no perder clientes en el camino.</p></details>
+      <details><summary data-i="q6">¿«x10» es una garantía?</summary><p data-i="a6">No. Es el objetivo con el que trabajamos. Los resultados dependen de tu comunidad, tu mercado y tu trabajo, y no están garantizados.</p></details>
+      <details><summary data-i="q7">¿Cuánto cuesta?</summary><p data-i="a7">Depende de lo que necesites. Lo vemos en la primera conversación, sin compromiso.</p></details>
+      <details><summary data-i="q8">¿Cómo empiezo?</summary><p data-i="a8">Haz el test de abajo o reserva una llamada. También puedes escribirnos a Telegram: @kimberlytq1.</p></details>
+    </div>
+  </section>
+
+  <!-- Encuesta -->
+  <section class="block" id="califica">
+    <div class="qual">
+      <div class="side">
+        <div class="head" style="margin-bottom:0"><span class="eyebrow" data-i="f_eb">Test de calificación</span><h2 data-i="f_t">¿Tu negocio está listo para x10?</h2><p data-i="f_p">Responde 4 preguntas y te decimos por dónde empezar.</p></div>
+        <ul>
+          <li><svg class="i"><use href="#i-chk"/></svg><span data-i="f_l1">Recibes un diagnóstico de tu etapa</span></li>
+          <li><svg class="i"><use href="#i-chk"/></svg><span data-i="f_l2">Te escribimos por Telegram con el siguiente paso</span></li>
+          <li><svg class="i"><use href="#i-chk"/></svg><span data-i="f_l3">O reservas directamente una llamada</span></li>
+        </ul>
+      </div>
+
+      <div class="quiz" id="quiz">
+        <div class="prog" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="qs" data-step="0">
+          <small data-i="qz_s1">Pregunta 1 de 4</small><h3 data-i="qz_q1">¿Cuánto tiempo llevas como IB?</h3>
+          <div class="opts" data-key="time">
+            <button type="button" class="opt" data-v="0" data-i="o10">Estoy empezando</button>
+            <button type="button" class="opt" data-v="1" data-i="o11">Menos de 1 año</button>
+            <button type="button" class="opt" data-v="2" data-i="o12">1 a 3 años</button>
+            <button type="button" class="opt" data-v="3" data-i="o13">Más de 3 años</button>
+          </div>
+        </div>
+        <div class="qs" data-step="1" hidden>
+          <small data-i="qz_s2">Pregunta 2 de 4</small><h3 data-i="qz_q2">¿Cuánto generas al mes en comisiones?</h3>
+          <div class="opts" data-key="rev">
+            <button type="button" class="opt" data-v="0" data-i="o20">Aún nada</button>
+            <button type="button" class="opt" data-v="1">$1K – $5K</button>
+            <button type="button" class="opt" data-v="2">$5K – $20K</button>
+            <button type="button" class="opt" data-v="3">+$20K</button>
+          </div>
+        </div>
+        <div class="qs" data-step="2" hidden>
+          <small data-i="qz_s3">Pregunta 3 de 4</small><h3 data-i="qz_q3">¿Qué tamaño tiene tu comunidad?</h3>
+          <div class="opts" data-key="aud">
+            <button type="button" class="opt" data-v="0" data-i="o30">Menos de 500 personas</button>
+            <button type="button" class="opt" data-v="1">500 – 5.000</button>
+            <button type="button" class="opt" data-v="2">5.000 – 50.000</button>
+            <button type="button" class="opt" data-v="3" data-i="o33">Más de 50.000</button>
+          </div>
+        </div>
+        <div class="qs" data-step="3" hidden>
+          <small data-i="qz_s4">Pregunta 4 de 4</small><h3 data-i="qz_q4">¿Qué es lo que más te frena hoy?</h3>
+          <div class="opts" data-key="block">
+            <button type="button" class="opt" data-v="a" data-i="o40">Conseguir clientes nuevos</button>
+            <button type="button" class="opt" data-v="b" data-i="o41">Que se queden y operen</button>
+            <button type="button" class="opt" data-v="c" data-i="o42">No tengo herramientas propias</button>
+            <button type="button" class="opt" data-v="d" data-i="o43">Mis condiciones con el broker</button>
+          </div>
+        </div>
+        <div class="qs" data-step="4" hidden>
+          <small data-i="qz_s5">Último paso</small><h3 data-i="qz_q5">¿A quién le enviamos tu diagnóstico?</h3>
+          <div class="fields">
+            <label><span data-i="l_name">Nombre</span><input id="q-name" autocomplete="name"></label>
+            <label><span data-i="l_soc">Instagram o Telegram de tu comunidad</span><input id="q-soc" placeholder="@"></label>
+          </div>
+        </div>
+        <div class="res" id="res" hidden>
+          <span class="tier" id="tier"></span>
+          <h3 id="res-t"></h3>
+          <p id="res-p"></p>
+          <div class="ctas">
+            <a class="btn" href="#" data-cal target="_blank" rel="noopener"><svg class="i"><use href="#i-cal"/></svg> <span data-i="r_cal">Reservar llamada</span></a>
+            <a class="btn ghost" id="wa" href="https://t.me/kimberlytq1" target="_blank" rel="noopener"><svg class="i"><use href="#i-send"/></svg> <span data-i="r_wa">Enviar por Telegram</span></a>
+          </div>
+          <p class="note-s" id="copied" hidden></p>
+          <div hidden>
+          </div>
+        </div>
+        <p class="err" id="err" hidden></p>
+        <div class="qnav" id="qnav">
+          <button type="button" class="back" id="back" disabled data-i="b_back">← Atrás</button>
+          <button type="button" class="btn" id="next" data-i="b_next">Siguiente →</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="final">
+    <h2 data-i="fi_t">Tu comunidad puede valer mucho más de lo que hoy te paga.</h2>
+    <p data-i="fi_p">Cada mes sin sistema es volumen que no vuelve. Hablemos de cómo escalar tu negocio.</p>
+    <div class="ctas">
+      <a class="btn" href="#califica" data-i="fi_c1">Haz el test</a>
+      <a class="btn ghost" href="#" data-cal target="_blank" rel="noopener" data-i="fi_c2">Reservar una llamada</a>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer><div class="wrap">
+  <div class="row"><span>Scale x10 · IB Partners</span><span><span data-i="ft_c">Telegram:</span> <a href="https://t.me/kimberlytq1" target="_blank" rel="noopener">@kimberlytq1</a></span></div>
+  <p data-i="ft_r1">Aviso de riesgo: los CFDs y el Forex son instrumentos complejos y conllevan un alto riesgo de perder dinero rápidamente debido al apalancamiento. Considera si entiendes cómo funcionan y si puedes asumir el riesgo de perder tu dinero.</p>
+  <p data-i="ft_r2">Este contenido es informativo y no constituye asesoría financiera ni de inversión. «x10» es un objetivo de crecimiento, no una promesa de resultados. Las cifras del panel y los mensajes de ejemplo son ilustrativos. Los resultados dependen de cada IB y no están garantizados. Servicios de broker prestados por TradeQuo; consulta su regulación y disponibilidad en tu país.</p>
+</div></footer>
+
+<script>
+const TELEGRAM = "kimberlytq1";
+const CALENDLY = "https://calendly.com/kimberlygomez/15min";
+const EN = {
+ n1:"The system",n2:"White label",n3:"Team",n4:"FAQ",n_cta:"Do you qualify?",
+ h_pill:"Partner program for IBs",h_t1:"Let me scale your IB business",
+ h_sub:"You already have the community. We bring the full system behind it: better terms, premium tools under your brand, automation and a team working to grow your volume.",
+ h_cta:"Take the 60-second test",h_cta2:"Book a call",h_n1:"4 questions",h_n2:"No commitment",h_n3:"Reply on Telegram",
+ mk_b:"Your Brand · IB Panel",mk_t:"WHITE LABEL",mk_k1:"Active clients",mk_k2:"Lots this month",mk_k3:"Sub-IBs",mk_f1:"New sign-up from Telegram",mk_f2:"Scanner alert sent to VIP channel",mk_d:"Illustrative example · fictional figures",
+ st1:"premium apps under your brand",st2:"work areas in one system",st3:"channels and bots working for you",st4:"team dedicated to your growth",
+ p_eb:"Sound familiar?",p_t:"You proved it works. Now structure is what's holding you back.",p_p:"Every month you grow by hand, you leave volume on the table. It's not a lack of effort. It's a lack of system.",
+ pa1q:"I answer DMs all day and still lose clients.",pa1:"Manual follow-up has a ceiling. When you grow, it breaks.",
+ pa2q:"My clients sign up, trade for a month and disappear.",pa2:"Without products that give them daily value, retention drops.",
+ pa3q:"I feel my broker pays me less than my community is worth.",pa3:"With the right structure, the same volume can pay you more.",
+ j_eb:"The x10 path",j_t:"Four stages. Each one multiplies the next.",
+ j1s:"Stage 1",j1t:"Get seen",j1p:"Content, ads and a brand that attracts the right traders.",
+ j2s:"Stage 2",j2t:"Stand out",j2p:"An offer nobody else has: your signals, your indicator, your app.",
+ j3s:"Stage 3",j3t:"Convert faster",j3p:"Bots and funnels that take a lead from a comment to an active account.",
+ j4s:"Stage 4",j4t:"Retain and scale",j4p:"Daily value for your clients, sub-IBs and a team that supports you every month.",
+ s_eb:"The system",s_t:"Everything behind an IB that scales.",s_p:"Four areas working together. You choose which to switch on first.",
+ c1t:"Commercial",c1l:"The deal everything else sits on.",c1a:"Direct broker relationship (TradeQuo)",c1b:"Per-lot payout structure",c1c:"IB and sub-IB setup",c1d:"Revenue strategy and monthly targets",c1e:"IB Desk panel to see your network and commissions",c1f:"Loyalty and referral program for your clients",
+ c2t:"Client products",tg:"YOUR BRAND",c2l:"What your community gets from day one.",c2a:"Telegram channels with automated entries",c2b:"Your own indicator built on your strategy",c2c:"Market scanners and alerts",c2d:"TradingView Premium inside your app",c2e:"Copy trading and social trading ranking",c2f:"Academy, courses and live Zoom sessions",c2g:"AI trading copilot and AI journal",c2h:"News, economic calendar and market analysis",
+ c3t:"Infrastructure",c3l:"What nobody sees and everything depends on.",c3a:"XMP Club app under your brand (19 apps)",c3b:"Website and sign-up funnels",c3c:"Automatic onboarding via Telegram and WhatsApp",c3d:"ManyChat automations (comment → DM → sign-up)",c3e:"AI agent on Telegram for your clients",c3f:"CRM and tracking for every client",
+ c4t:"Growth",c4l:"Where your next client comes from.",c4a:"Content strategy and personal brand",c4b:"Paid media",c4c:"UGC and ready-to-post content",c4d:"Events, webinars and lead-gen giveaways",c4e:"Setters and closing scripts",c4f:"Monthly support from the team",
+ w_eb:"White label",w_t:"Your community sees your brand. Never ours.",w_p:"We build every tool with your name, logo and colors. To your clients, it's all yours.",
+ w1t:"Telegram channels that run themselves",w1p:"We set up your channels to post entries, manage VIP access and welcome every new client automatically.",tg_h:"Your Brand · VIP",tg_m:"👋 Welcome. Your VIP access is active.",tg_ex:"Illustrative example, not a recommendation",
+ w2t:"An indicator built on your strategy",w2p:"We turn the way you trade into your own TradingView indicator that only your clients have.",
+ w3t:"Scanners and alerts",w3p:"Scanners that spot your setups and send alerts to your channels.",
+ w4t:"Your own app",w4p:"All 19 XMP Club apps under your brand, with one account for your clients.",
+ w5t:"Your academy",w5p:"Courses, lessons and live sessions published under your name.",
+ w6t:"Website and funnels",w6p:"A professional website and sign-up funnels linked to your IB link.",
+ w7t:"Bots and AI",w7p:"An AI agent on Telegram and automations that reply for you.",
+ w8t:"Copy trading",w8p:"Your clients can copy traders with a public track record.",
+ x_eb:"The 19 apps",x_t:"A complete platform. Ready for your brand.",x_p:"Your clients log in with one account, in the browser or as an app, no downloads.",
+ xa:"Trading and AI",xa1:"Scanner and indicators",xa2:"AI agent on Telegram",xb:"Markets",xb1:"Market Analysis",xb2:"News",xb3:"Economic calendar",xb4:"Dashboard",xc:"Education",xc1:"Academy",xc2:"Events",xc3:"Games",xd:"Community and management",xd1:"Community",xd2:"Loyalty",
+ x_n:"TradingView is a trademark of its owner. Available apps may vary by plan.",
+ e_eb:"Who's behind it",e_t:"A face you know. A team that delivers.",e_role:"Leads partner strategy · 7 years in the markets",
+ r1t:"Strategy and accounts",r1p:"Designs your plan, targets and IB and sub-IB structure.",r2t:"Tech and automation",r2p:"Builds your channels, bots, indicators, scanners and app.",r3t:"Content and growth",r3p:"Creates the content, campaigns and events that bring clients.",r4t:"Onboarding and support",r4p:"Guides your clients from sign-up to their first trade.",
+ e_q:"“My job is to let you focus on your community. We take care of the system.”",
+ v_eb:"The difference",v_t:"What your business looks like before and after the system.",va:"Today, no system",va1:"You answer every DM by hand",va2:"You share other people's tools",va3:"Clients leave after their first bad month",va4:"Your income depends on your hours",va5:"You grow alone, with no plan",
+ vb:"With the x10 system",vb1:"Bots and funnels convert while you sleep",vb2:"You offer premium tools under your brand",vb3:"Your clients get value every day",vb4:"Your income grows with your network's volume",vb5:"A team supports you every month",
+ q_eb:"Questions",q_t:"Clear answers, before we talk.",
+ q1:"Do I need IB experience?",a1:"No. If you're starting from zero, we build the offer, brand and process with you before you go after clients.",
+ q2:"What does white label mean?",a2:"Your app, channels, indicator, academy and website carry your name and look. Your community sees your brand.",
+ q3:"How long until everything is ready?",a3:"It depends on what you switch on. On the call we give you a plan with dates for each part.",
+ q4:"How do I earn?",a4:"Through commissions on the volume your community trades. We review your per-lot and sub-IB structure on the call.",
+ q5:"Can I switch if I'm already an IB with another broker?",a5:"Yes. We review your case and plan the move so you don't lose clients along the way.",
+ q6:"Is “x10” a guarantee?",a6:"No. It's the goal we work toward. Results depend on your community, your market and your work, and are not guaranteed.",
+ q7:"How much does it cost?",a7:"It depends on what you need. We'll cover it in our first conversation, no commitment.",
+ q8:"How do I start?",a8:"Take the test below or book a call. You can also message us on Telegram: @kimberlytq1.",
+ f_eb:"Qualification test",f_t:"Is your business ready for x10?",f_p:"Answer 4 questions and we'll tell you where to start.",
+ f_l1:"Get a diagnosis of your stage",f_l2:"We message you on Telegram with the next step",f_l3:"Or book a call directly",
+ qz_s1:"Question 1 of 4",qz_q1:"How long have you been an IB?",o10:"Just starting",o11:"Less than 1 year",o12:"1 to 3 years",o13:"More than 3 years",
+ qz_s2:"Question 2 of 4",qz_q2:"How much do you make monthly in commissions?",o20:"Nothing yet",
+ qz_s3:"Question 3 of 4",qz_q3:"How big is your community?",o30:"Fewer than 500 people",o33:"More than 50,000",
+ qz_s4:"Question 4 of 4",qz_q4:"What's holding you back most today?",o40:"Getting new clients",o41:"Getting them to stay and trade",o42:"I don't have my own tools",o43:"My terms with the broker",
+ qz_s5:"Last step",qz_q5:"Who should we send your diagnosis to?",l_name:"Name",l_soc:"Your community's Instagram or Telegram",
+ r_wa:"Send via Telegram",r_cal:"Book a call",b_back:"← Back",b_next:"Next →",
+ fi_t:"Your community could be worth far more than it pays you today.",fi_p:"Every month without a system is volume you don't get back. Let's talk about scaling your business.",fi_c1:"Take the test",fi_c2:"Book a call",
+ ft_c:"Telegram:",
+ ft_r1:"Risk warning: CFDs and Forex are complex instruments and come with a high risk of losing money rapidly due to leverage. Consider whether you understand how they work and whether you can afford the risk of losing your money.",
+ ft_r2:"This content is informational and is not financial or investment advice. “x10” is a growth goal, not a promise of results. Dashboard figures and sample messages are illustrative. Results depend on each IB and are not guaranteed. Broker services provided by TradeQuo; check its regulation and availability in your country."
+};
+const T = {
+ es:{err_opt:"Elige una opción para continuar.",err_name:"Escribe tu nombre para continuar.",
+  tiers:[["ETAPA: CONSTRUIR","Empezamos por la base.","Tu prioridad es armar tu oferta y tus primeras herramientas con tu marca. Te enviamos un plan de arranque."],
+         ["ETAPA: ACELERAR","Tienes tracción. Falta el sistema.","Ya hay comunidad y volumen. Con automatización y productos propios puedes crecer mucho más rápido."],
+         ["ETAPA: ESCALAR","Estás listo/a para x10.","Tu negocio tiene tamaño para un sistema completo en marca blanca y un equipo dedicado. Hablemos esta semana."]],
+  wa:(d)=>`PARTNER\nNombre: ${d.name}\nInstagram/Telegram: ${d.soc||"-"}\nTiempo como IB: ${d.time}\nComisiones/mes: ${d.rev}\nComunidad: ${d.aud}\nLo que me frena: ${d.block}\nEtapa: ${d.tier}`,
+  step:"Pregunta"},
+ en:{err_opt:"Pick an option to continue.",err_name:"Add your name to continue.",
+  tiers:[["STAGE: BUILD","Let's start with the foundation.","Your priority is building your offer and first branded tools. We'll send you a launch plan."],
+         ["STAGE: ACCELERATE","You have traction. You're missing the system.","You already have community and volume. With automation and your own products you can grow much faster."],
+         ["STAGE: SCALE","You're ready for x10.","Your business is big enough for a full white-label system and a dedicated team. Let's talk this week."]],
+  wa:(d)=>`PARTNER\nName: ${d.name}\nInstagram/Telegram: ${d.soc||"-"}\nTime as IB: ${d.time}\nCommissions/month: ${d.rev}\nCommunity size: ${d.aud}\nMain blocker: ${d.block}\nStage: ${d.tier}`,
+  step:"Question"}
+};
+const ES = {}; document.querySelectorAll("[data-i]").forEach(e=>ES[e.dataset.i]=e.innerHTML);
+let lang="es";
+function setLang(l){lang=l;const d=l==="en"?EN:ES;
+  document.querySelectorAll("[data-i]").forEach(e=>{const v=d[e.dataset.i];if(v!==undefined)e.innerHTML=v});
+  document.documentElement.lang=l;
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===l)));
+  if(!document.getElementById("res").hidden)showResult();
+  try{localStorage.setItem("lang",l)}catch(e){}}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+
+/* Calendly */
+document.querySelectorAll("[data-cal]").forEach(a=>{
+  if(CALENDLY){a.href=CALENDLY;a.target="_blank";a.rel="noopener"}
+  else{a.removeAttribute("target");a.href="#califica"}
+});
+
+/* Quiz */
+const steps=[...document.querySelectorAll(".qs")], bars=[...document.querySelectorAll(".prog i")];
+const ans={}; let cur=0;
+const $=id=>document.getElementById(id);
+document.querySelectorAll(".opts").forEach(g=>g.addEventListener("click",e=>{
+  const b=e.target.closest(".opt"); if(!b)return;
+  g.querySelectorAll(".opt").forEach(o=>o.setAttribute("aria-pressed","false"));
+  b.setAttribute("aria-pressed","true"); ans[g.dataset.key]=b; $("err").hidden=true;
+  const n=cur;if(n<3)setTimeout(()=>{if(cur===n)go(n+1)},220);
+}));
+function go(n){cur=n;steps.forEach((s,i)=>s.hidden=i!==n);bars.forEach((b,i)=>b.classList.toggle("on",i<=n));$("back").disabled=n===0;$("err").hidden=true;}
+$("back").addEventListener("click",()=>{if(!$("res").hidden){$("res").hidden=true;$("qnav").hidden=false;go(4);return}if(cur>0)go(cur-1)});
+$("next").addEventListener("click",()=>{
+  const keys=["time","rev","aud","block"];
+  if(cur<4){if(!ans[keys[cur]]){$("err").textContent=T[lang].err_opt;$("err").hidden=false;return}go(cur+1);return}
+  if(!$("q-name").value.trim()){$("err").textContent=T[lang].err_name;$("err").hidden=false;$("q-name").focus();return}
+  steps.forEach(s=>s.hidden=true);$("qnav").hidden=true;$("res").hidden=false;bars.forEach(b=>b.classList.add("on"));showResult();
+});
+function showResult(){
+  const score=["time","rev","aud"].reduce((s,k)=>s+(+(ans[k]?.dataset.v||0)),0);
+  const t=T[lang].tiers[score<=2?0:score<=5?1:2];
+  $("tier").textContent=t[0];$("res-t").textContent=t[1];$("res-p").textContent=t[2];
+  const txt=b=>b?b.textContent.trim():"-";
+  const msg=T[lang].wa({name:$("q-name").value.trim(),soc:$("q-soc").value.trim(),time:txt(ans.time),rev:txt(ans.rev),aud:txt(ans.aud),block:txt(ans.block),tier:t[0]});
+  window._msg=msg;
+}
+$("wa").addEventListener("click",()=>{const c=$("copied");c.hidden=false;
+  c.textContent=lang==="en"?"Your answers were copied. Paste them in the Telegram chat and send.":"Tus respuestas se copiaron. Pégalas en el chat de Telegram y envíalas.";
+  try{navigator.clipboard.writeText(window._msg||"").catch(()=>{c.textContent=(lang==="en"?"Copy and send this on Telegram:\n":"Copia y envía esto por Telegram:\n")+(window._msg||"")})}catch(e){c.textContent=window._msg||""}
+});
+go(0);
+try{if(localStorage.getItem("lang")==="en")setLang("en")}catch(e){}
+</script>
+
+</body></html>
