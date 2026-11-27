@@ -171,13 +171,19 @@ section.block{padding-block:5.5rem 0}
 .cdisc{font-size:.76rem;color:var(--dim);margin-top:1rem}
 
 /* Equipo */
-.team{display:grid;grid-template-columns:.9fr 1.1fr;gap:2rem;align-items:stretch}
+.team{display:grid;grid-template-columns:1fr;gap:1.2rem;align-items:stretch}
 .team>*{min-width:0}
-.lead-card{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line2);min-height:420px;background:var(--panel)}
-.lead-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.2) contrast(1.05)}
-.lead-card .ov{position:absolute;left:0;right:0;bottom:0;padding:1.4rem;background:linear-gradient(transparent,rgba(9,9,10,.95) 45%)}
-.lead-card .ov b{display:block;font:800 1.5rem var(--display)}
-.lead-card .ov span{color:var(--muted);font-size:.9rem}
+.team .roles{grid-template-columns:repeat(4,1fr)}.team .roles .quote{grid-column:1/-1}
+.lead-card{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);border-radius:16px;overflow:hidden;border:1px solid var(--line2);background:linear-gradient(135deg,var(--panel2),var(--panel) 60%)}
+.lead-card .ph{position:relative}
+.lead-card .ph img{display:block;width:100%;height:auto;aspect-ratio:614/1024;object-fit:cover}
+.lead-card .cap{position:absolute;left:0;right:0;bottom:0;padding:5rem 1.4rem 1.3rem;background:linear-gradient(to bottom,transparent,rgba(9,9,10,.7) 45%,rgba(9,9,10,.96))}
+.lead-card .cap b{display:block;font:800 1.6rem var(--display)}
+.lead-card .cap span{color:var(--muted);font-size:.9rem}
+.lead-card .ov{display:flex;flex-direction:column;justify-content:center;padding:2.4rem}
+.lead-card .ov .quote{font-size:clamp(1.3rem,2.4vw,1.9rem);max-width:36rem}
+@media (max-width:900px){.team .roles{grid-template-columns:1fr 1fr}.lead-card{grid-template-columns:1fr}.lead-card .ov{padding:1.6rem}}
+@media (max-width:560px){.team .roles{grid-template-columns:1fr}}
 .roles{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-content:start}
 .roles>div{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.2rem;min-width:0}
 .roles .ic{color:var(--red);margin-bottom:.6rem}
@@ -405,6 +411,116 @@ footer p+p{margin-top:.6rem}
     <div><b>1</b><span data-i="st4">equipo dedicado a tu crecimiento</span></div>
   </div>
 
+  <!-- Equipo -->
+  <section class="block" id="equipo">
+    <div class="head"><span class="label" data-i="e_eb">Quién está detrás</span><h2 data-i="e_t">Una cara que conoces. Un equipo que ejecuta.</h2></div>
+    <div class="team">
+      <div class="lead-card">
+        <div class="ph">
+          <img src="fotos/expo-dubai.jpg" alt="Kimberly en el Forex Traders Expo & Summit Dubai 2026" onerror="this.remove()">
+          <div class="cap"><b>Kimberly</b><span data-i="e_role">Lidera la estrategia de partners · 7 años en los mercados</span></div>
+        </div>
+        <div class="ov"><p class="quote" data-i="e_q">“Mi trabajo es que tú te enfoques en tu comunidad. Del sistema nos encargamos nosotros.”</p></div>
+      </div>
+      <div class="roles">
+        <div><div class="ic"><svg class="i"><use href="#i-target"/></svg></div><h4 data-i="r1t">Estrategia y cuentas</h4><p data-i="r1p">Diseña tu plan, tus metas y tu estructura de IB y sub-IB.</p></div>
+        <div><div class="ic"><svg class="i"><use href="#i-cog"/></svg></div><h4 data-i="r2t">Tecnología y automatización</h4><p data-i="r2p">Monta tus canales, bots, indicadores, escáneres y tu app.</p></div>
+        <div><div class="ic"><svg class="i"><use href="#i-pen"/></svg></div><h4 data-i="r3t">Contenido y crecimiento</h4><p data-i="r3p">Crea las piezas, campañas y eventos que traen clientes.</p></div>
+        <div><div class="ic"><svg class="i"><use href="#i-users"/></svg></div><h4 data-i="r4t">Onboarding y soporte</h4><p data-i="r4p">Acompaña a tus clientes desde el registro hasta su primera operación.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diagnóstico -->
+  <section class="block" id="diagnostico">
+    <div class="diag">
+      <div class="side">
+        <div class="head" style="margin-bottom:0"><span class="label" data-i="d_eb">Diagnóstico x10</span><h2 data-i="d_t">¿Qué palanca te está frenando?</h2><p data-i="d_p">Responde 5 preguntas rápidas. Te damos tu puntuación en cada palanca y te escribimos por email con el siguiente paso.</p></div>
+        <ul>
+          <li><svg class="i"><use href="#i-chk"/></svg><span data-i="d_l1">Tu puntuación de 0 a 100 al instante</span></li>
+          <li><svg class="i"><use href="#i-chk"/></svg><span data-i="d_l2">La palanca que más te conviene activar</span></li>
+          <li><svg class="i"><use href="#i-chk"/></svg><span data-i="d_l3">Un plan inicial en tu email</span></li>
+        </ul>
+      </div>
+
+      <form class="quiz" id="quiz" novalidate>
+        <div class="qtop"><small id="qlabel"></small><div class="ring" id="ring"><i id="ringv">0%</i></div></div>
+        <div class="qs" data-step="0">
+          <h3 data-i="qz1">¿Cuánto tiempo llevas como IB?</h3>
+          <div class="opts" data-key="time">
+            <button type="button" class="opt" data-v="0" data-i="o10">Estoy empezando</button>
+            <button type="button" class="opt" data-v="1" data-i="o11">Menos de 1 año</button>
+            <button type="button" class="opt" data-v="2" data-i="o12">1 a 3 años</button>
+            <button type="button" class="opt" data-v="3" data-i="o13">Más de 3 años</button>
+          </div>
+        </div>
+        <div class="qs" data-step="1" hidden>
+          <h3 data-i="qz2">¿Cuánto generas al mes en comisiones?</h3>
+          <div class="opts" data-key="rev">
+            <button type="button" class="opt" data-v="0" data-i="o20">Aún nada</button>
+            <button type="button" class="opt" data-v="1">$1K – $5K</button>
+            <button type="button" class="opt" data-v="2">$5K – $20K</button>
+            <button type="button" class="opt" data-v="3">+$20K</button>
+          </div>
+        </div>
+        <div class="qs" data-step="2" hidden>
+          <h3 data-i="qz3">¿Qué tamaño tiene tu comunidad?</h3>
+          <div class="opts" data-key="aud">
+            <button type="button" class="opt" data-v="0" data-i="o30">Menos de 500</button>
+            <button type="button" class="opt" data-v="1" data-i="o31">500 a 5 mil</button>
+            <button type="button" class="opt" data-v="2" data-i="o32">5 mil a 50 mil</button>
+            <button type="button" class="opt" data-v="3" data-i="o33">Más de 50 mil</button>
+          </div>
+        </div>
+        <div class="qs" data-step="3" hidden>
+          <h3 data-i="qz4">¿Qué herramientas propias ofreces hoy?</h3>
+          <div class="opts" data-key="tools">
+            <button type="button" class="opt" data-v="0" data-i="o40">Ninguna</button>
+            <button type="button" class="opt" data-v="1" data-i="o41">Comparto las de otros</button>
+            <button type="button" class="opt" data-v="2" data-i="o42">Algunas con mi marca</button>
+            <button type="button" class="opt" data-v="3" data-i="o43">Todo con mi marca</button>
+          </div>
+        </div>
+        <div class="qs" data-step="4" hidden>
+          <h3 data-i="qz5">¿Cómo atiendes a tus interesados?</h3>
+          <div class="opts" data-key="auto">
+            <button type="button" class="opt" data-v="0" data-i="o50">Todo a mano por DM</button>
+            <button type="button" class="opt" data-v="1" data-i="o51">Algunas respuestas automáticas</button>
+            <button type="button" class="opt" data-v="2" data-i="o52">Tengo un embudo armado</button>
+            <button type="button" class="opt" data-v="3" data-i="o53">Todo automatizado</button>
+          </div>
+        </div>
+        <div class="qs" data-step="5" hidden>
+          <h3 data-i="qz6">¿A dónde te enviamos tu diagnóstico?</h3>
+          <div class="fields">
+            <label><span data-i="f_n">Nombre</span><input id="q-name" name="name" autocomplete="name" required></label>
+            <label><span data-i="f_e">Email</span><input id="q-email" name="email" type="email" autocomplete="email" required></label>
+            <label><span data-i="f_t">Teléfono (con código de país)</span><input id="q-phone" name="phone" type="tel" autocomplete="tel" placeholder="+44 …" required></label>
+            <p class="consent" data-i="f_c">Al enviar aceptas que te contactemos por WhatsApp, teléfono y email sobre el programa; puedes darte de baja cuando quieras. No compartimos tus datos. No apto para menores de edad.</p>
+          </div>
+        </div>
+        <div id="res" hidden>
+          <div class="score">
+            <div class="big" id="big"><i><span id="bigv">0</span><small>/100</small></i></div>
+            <div><span class="label" id="tier"></span><h3 id="res-t"></h3><p id="res-p"></p></div>
+          </div>
+          <div class="lbars" id="lbars"></div>
+          <p class="sent" id="sent"></p>
+          <div class="res-ctas">
+            <a class="btn" href="#" data-cal target="_blank" rel="noopener"><svg class="i"><use href="#i-cal"/></svg> <span data-i="r_cal">Reservar llamada</span></a>
+            <a class="btn ghost" href="https://t.me/kimberlytq1" target="_blank" rel="noopener"><svg class="i"><use href="#i-send"/></svg> <span data-i="r_tg">Escribir por Telegram</span></a>
+          </div>
+        </div>
+        <p class="err" id="err" hidden></p>
+        <div class="qnav" id="qnav">
+          <button type="button" class="back" id="back" disabled data-i="b_back">← Atrás</button>
+          <button type="submit" class="btn" id="next"><span id="nextl" data-i="b_next">Siguiente →</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
   <!-- Dolor -->
   <section class="block">
     <div class="head"><span class="label" data-i="p_eb">¿Te suena?</span><h2 data-i="p_t">Tu comunidad creció. Tu forma de trabajar, no.</h2><p data-i="p_p">Cada mes que creces a mano, dejas volumen sobre la mesa. No es falta de ganas: es falta de sistema.</p></div>
@@ -428,7 +544,7 @@ footer p+p{margin-top:.6rem}
 
   <!-- Palancas -->
   <section class="block" id="palancas">
-    <div class="head"><span class="label" data-i="l_eb">El método</span><h2 data-i="l_t">Las 4 palancas x10.</h2><p data-i="l_p">Cada palanca suma por sí sola. Juntas, multiplican. Elige una para ver qué incluye.</p></div>
+    <div class="head"><span class="label" data-i="l_eb">El método</span><h2 data-i="l_t">Las 4 palancas x10.</h2><p data-i="l_p">Construimos, organizamos y negociamos lo que tu comunidad necesite. Cada palanca suma por sí sola; juntas, multiplican. Elige una para ver qué incluye.</p></div>
     <div class="levers">
       <div class="tabs" role="tablist">
         <button class="tab" role="tab" aria-selected="true" data-t="0"><span class="ic"><svg class="i"><use href="#i-deal"/></svg></span><span><b data-i="t0">Condiciones</b><span data-i="t0s">Lo que ganas por cada lote</span></span></button>
@@ -439,7 +555,7 @@ footer p+p{margin-top:.6rem}
       <div class="panel" role="tabpanel">
         <div data-p="0">
           <span class="k" data-i="k0">Palanca 1</span><h3 data-i="t0">Condiciones</h3><p class="lead" data-i="pl0">Lo que ganas por cada lote que opera tu red.</p>
-          <ul><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0a">Acuerdo directo con nuestro broker aliado, TradeQuo</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0b">Comisión por lote según tu volumen</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0c">Red de sub-IBs con su propia estructura</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0d">IB Desk para seguir tus comisiones</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0e">Plan de metas mes a mes</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0f">Programa de fidelidad y referidos</span></li></ul>
+          <ul><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0a">Condiciones y rebates negociados contigo, caso a caso</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0b">Comisión por lote según tu volumen</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0c">Red de sub-IBs con su propia estructura</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0d">IB Desk para seguir tus comisiones</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0e">Plan de metas mes a mes</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c0f">Programa de fidelidad y referidos</span></li></ul>
         </div>
         <div data-p="1" hidden>
           <span class="k" data-i="k1">Palanca 2</span><h3 data-i="t1">Arsenal</h3><p class="lead" data-i="pl1">Herramientas que tus clientes no encuentran en otro lado.</p>
@@ -453,14 +569,14 @@ footer p+p{margin-top:.6rem}
           <span class="k" data-i="k3">Palanca 4</span><h3 data-i="t3">Audiencia</h3><p class="lead" data-i="pl3">Más personas correctas viendo tu oferta cada semana.</p>
           <ul><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c3a">Contenido y marca personal</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c3b">Campañas pagadas</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c3c">Piezas listas para publicar</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c3d">Webinars, eventos y sorteos</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c3e">Guiones de cierre</span></li><li><svg class="i"><use href="#i-chk"/></svg><span data-i="c3f">Revisión mensual con el equipo</span></li></ul>
         </div>
-        <p class="wb" data-i="wb">Todo disponible en marca blanca.</p>
+        <p class="wb" data-i="wb">Marca blanca desde el primer día, sujeta a condiciones.</p>
       </div>
     </div>
   </section>
 
   <!-- Marca blanca -->
   <section class="block" id="marca-blanca">
-    <div class="head"><span class="label" data-i="w_eb">Marca blanca</span><h2 data-i="w_t">Tu comunidad ve tu marca. Nunca la nuestra.</h2><p data-i="w_p">Creamos cada herramienta con tu nombre, tu logo y tus colores. Para tus clientes, todo es tuyo.</p></div>
+    <div class="head"><span class="label" data-i="w_eb">Marca blanca</span><h2 data-i="w_t">Tu comunidad ve tu marca desde el primer día.</h2><p data-i="w_p">Creamos tus herramientas con tu nombre, tu logo y tus colores desde el inicio, sujeto a condiciones que definimos juntos en la negociación.</p></div>
     <div class="wl">
       <div><div class="ic"><svg class="i"><use href="#i-send"/></svg></div><h4 data-i="w1t">Canales de Telegram que trabajan solos</h4><p data-i="w1p">Publican entradas, gestionan el acceso VIP y dan la bienvenida a cada cliente nuevo.</p></div>
       <div><div class="ic"><svg class="i"><use href="#i-ind"/></svg></div><h4 data-i="w2t">Un indicador con tu estrategia</h4><p data-i="w2p">Convertimos tu forma de operar en un indicador para TradingView que solo tienen tus clientes.</p></div>
@@ -536,7 +652,7 @@ footer p+p{margin-top:.6rem}
     <div class="dleg">
       <div><b data-i="dl1">Ves todo</b><p data-i="dl1p">Comisiones, clientes y campañas en tiempo real, en un solo lugar.</p></div>
       <div><b data-i="dl2">Todo conectado</b><p data-i="dl2p">Canales, bots, academia y app hablan entre sí y alimentan tu CRM.</p></div>
-      <div><b data-i="dl3">Con tu marca</b><p data-i="dl3p">Tu logo, tus colores y tu dominio. Tus clientes nunca ven el nuestro.</p></div>
+      <div><b data-i="dl3">Con tu marca</b><p data-i="dl3p">Tu logo, tus colores y tu dominio, sujeto a condiciones.</p></div>
       <div><b data-i="dl4">Con equipo</b><p data-i="dl4p">Detrás de cada widget hay personas que lo configuran y lo mejoran contigo.</p></div>
     </div>
   </section>
@@ -581,24 +697,6 @@ footer p+p{margin-top:.6rem}
     </div>
   </section>
 
-  <!-- Equipo -->
-  <section class="block" id="equipo">
-    <div class="head"><span class="label" data-i="e_eb">Quién está detrás</span><h2 data-i="e_t">Una cara que conoces. Un equipo que ejecuta.</h2></div>
-    <div class="team">
-      <div class="lead-card">
-        <img src="trabaja.jpg" alt="Kimberly" onerror="this.remove()">
-        <div class="ov"><b>Kimberly</b><span data-i="e_role">Lidera la estrategia de partners · 7 años en los mercados</span></div>
-      </div>
-      <div class="roles">
-        <div><div class="ic"><svg class="i"><use href="#i-target"/></svg></div><h4 data-i="r1t">Estrategia y cuentas</h4><p data-i="r1p">Diseña tu plan, tus metas y tu estructura de IB y sub-IB.</p></div>
-        <div><div class="ic"><svg class="i"><use href="#i-cog"/></svg></div><h4 data-i="r2t">Tecnología y automatización</h4><p data-i="r2p">Monta tus canales, bots, indicadores, escáneres y tu app.</p></div>
-        <div><div class="ic"><svg class="i"><use href="#i-pen"/></svg></div><h4 data-i="r3t">Contenido y crecimiento</h4><p data-i="r3p">Crea las piezas, campañas y eventos que traen clientes.</p></div>
-        <div><div class="ic"><svg class="i"><use href="#i-users"/></svg></div><h4 data-i="r4t">Onboarding y soporte</h4><p data-i="r4p">Acompaña a tus clientes desde el registro hasta su primera operación.</p></div>
-        <p class="quote" data-i="e_q">“Mi trabajo es que tú te enfoques en tu comunidad. Del sistema nos encargamos nosotros.”</p>
-      </div>
-    </div>
-  </section>
-
   <!-- Antes/después -->
   <section class="block">
     <div class="head"><span class="label" data-i="v_eb">La diferencia</span><h2 data-i="v_t">Así se ve tu negocio antes y después del sistema.</h2></div>
@@ -624,101 +722,12 @@ footer p+p{margin-top:.6rem}
     <div class="faq">
       <details><summary data-i="q1">¿Cuánto tarda el lanzamiento?</summary><p data-i="a1">Depende de las palancas que actives. En la llamada te damos un plan con fechas para cada parte.</p></details>
       <details><summary data-i="q2">¿Qué necesito tener para empezar?</summary><p data-i="a2">Una comunidad o red, aunque sea pequeña, y ganas de trabajarla. Si aún no tienes marca, la creamos contigo.</p></details>
-      <details><summary data-i="q3">¿Qué pasa con los clientes que ya tengo?</summary><p data-i="a3">Revisamos tu caso y planeamos cada paso para que no pierdas a nadie en el camino.</p></details>
-      <details><summary data-i="q4">¿De quién es la marca?</summary><p data-i="a4">Tuya. Tu nombre, tu logo y tu comunidad. Nosotros ponemos la tecnología y el equipo detrás.</p></details>
+      <details><summary data-i="q3">¿Qué pasa con los clientes que ya tengo?</summary><p data-i="a3">Revisamos tu caso y planeamos cada paso para reducir al mínimo el riesgo de perder clientes en el camino.</p></details>
+      <details><summary data-i="q4">¿De quién es la marca?</summary><p data-i="a4">Tuya. Tu nombre, tu logo y tu comunidad desde el primer día, sujeto a condiciones que acordamos juntos. Nosotros ponemos la tecnología y el equipo detrás.</p></details>
       <details><summary data-i="q5">¿Cómo gano dinero?</summary><p data-i="a5">Con comisiones por el volumen que opera tu red. Puedes simularlo en la calculadora y lo revisamos en detalle en la llamada.</p></details>
       <details><summary data-i="q6">¿«x10» es una garantía?</summary><p data-i="a6">No. Es el objetivo con el que trabajamos. Los resultados dependen de tu comunidad, tu mercado y tu trabajo, y no están garantizados.</p></details>
-      <details><summary data-i="q7">¿Cuánto cuesta?</summary><p data-i="a7">Depende de lo que necesites. Lo vemos en la primera conversación, sin compromiso.</p></details>
+      <details><summary data-i="q7">¿Cuánto cuesta?</summary><p data-i="a7">Depende de lo que construyamos juntos. Todo se negocia caso a caso en la primera conversación, sin compromiso.</p></details>
       <details><summary data-i="q8">¿Cómo empiezo?</summary><p data-i="a8">Haz tu diagnóstico x10 o reserva una llamada. También puedes escribirnos a Telegram: @kimberlytq1.</p></details>
-    </div>
-  </section>
-
-  <!-- Diagnóstico -->
-  <section class="block" id="diagnostico">
-    <div class="diag">
-      <div class="side">
-        <div class="head" style="margin-bottom:0"><span class="label" data-i="d_eb">Diagnóstico x10</span><h2 data-i="d_t">¿Qué palanca te está frenando?</h2><p data-i="d_p">Responde 5 preguntas rápidas. Te damos tu puntuación en cada palanca y te escribimos por email con el siguiente paso.</p></div>
-        <ul>
-          <li><svg class="i"><use href="#i-chk"/></svg><span data-i="d_l1">Tu puntuación de 0 a 100 al instante</span></li>
-          <li><svg class="i"><use href="#i-chk"/></svg><span data-i="d_l2">La palanca que más te conviene activar</span></li>
-          <li><svg class="i"><use href="#i-chk"/></svg><span data-i="d_l3">Un plan inicial en tu email</span></li>
-        </ul>
-      </div>
-
-      <form class="quiz" id="quiz" novalidate>
-        <div class="qtop"><small id="qlabel"></small><div class="ring" id="ring"><i id="ringv">0%</i></div></div>
-        <div class="qs" data-step="0">
-          <h3 data-i="qz1">¿Cuánto tiempo llevas como IB?</h3>
-          <div class="opts" data-key="time">
-            <button type="button" class="opt" data-v="0" data-i="o10">Estoy empezando</button>
-            <button type="button" class="opt" data-v="1" data-i="o11">Menos de 1 año</button>
-            <button type="button" class="opt" data-v="2" data-i="o12">1 a 3 años</button>
-            <button type="button" class="opt" data-v="3" data-i="o13">Más de 3 años</button>
-          </div>
-        </div>
-        <div class="qs" data-step="1" hidden>
-          <h3 data-i="qz2">¿Cuánto generas al mes en comisiones?</h3>
-          <div class="opts" data-key="rev">
-            <button type="button" class="opt" data-v="0" data-i="o20">Aún nada</button>
-            <button type="button" class="opt" data-v="1">$1K – $5K</button>
-            <button type="button" class="opt" data-v="2">$5K – $20K</button>
-            <button type="button" class="opt" data-v="3">+$20K</button>
-          </div>
-        </div>
-        <div class="qs" data-step="2" hidden>
-          <h3 data-i="qz3">¿Qué tamaño tiene tu comunidad?</h3>
-          <div class="opts" data-key="aud">
-            <button type="button" class="opt" data-v="0" data-i="o30">Menos de 500</button>
-            <button type="button" class="opt" data-v="1" data-i="o31">500 a 5 mil</button>
-            <button type="button" class="opt" data-v="2" data-i="o32">5 mil a 50 mil</button>
-            <button type="button" class="opt" data-v="3" data-i="o33">Más de 50 mil</button>
-          </div>
-        </div>
-        <div class="qs" data-step="3" hidden>
-          <h3 data-i="qz4">¿Qué herramientas propias ofreces hoy?</h3>
-          <div class="opts" data-key="tools">
-            <button type="button" class="opt" data-v="0" data-i="o40">Ninguna</button>
-            <button type="button" class="opt" data-v="1" data-i="o41">Comparto las de otros</button>
-            <button type="button" class="opt" data-v="2" data-i="o42">Algunas con mi marca</button>
-            <button type="button" class="opt" data-v="3" data-i="o43">Todo con mi marca</button>
-          </div>
-        </div>
-        <div class="qs" data-step="4" hidden>
-          <h3 data-i="qz5">¿Cómo atiendes a tus interesados?</h3>
-          <div class="opts" data-key="auto">
-            <button type="button" class="opt" data-v="0" data-i="o50">Todo a mano por DM</button>
-            <button type="button" class="opt" data-v="1" data-i="o51">Algunas respuestas automáticas</button>
-            <button type="button" class="opt" data-v="2" data-i="o52">Tengo un embudo armado</button>
-            <button type="button" class="opt" data-v="3" data-i="o53">Todo automatizado</button>
-          </div>
-        </div>
-        <div class="qs" data-step="5" hidden>
-          <h3 data-i="qz6">¿A dónde te enviamos tu diagnóstico?</h3>
-          <div class="fields">
-            <label><span data-i="f_n">Nombre</span><input id="q-name" name="name" autocomplete="name" required></label>
-            <label><span data-i="f_e">Email</span><input id="q-email" name="email" type="email" autocomplete="email" required></label>
-            <label><span data-i="f_t">Teléfono (con código de país)</span><input id="q-phone" name="phone" type="tel" autocomplete="tel" placeholder="+44 …" required></label>
-            <p class="consent" data-i="f_c">Al enviar aceptas que te contactemos sobre el programa de partners. No compartimos tus datos.</p>
-          </div>
-        </div>
-        <div id="res" hidden>
-          <div class="score">
-            <div class="big" id="big"><i><span id="bigv">0</span><small>/100</small></i></div>
-            <div><span class="label" id="tier"></span><h3 id="res-t"></h3><p id="res-p"></p></div>
-          </div>
-          <div class="lbars" id="lbars"></div>
-          <p class="sent" id="sent"></p>
-          <div class="res-ctas">
-            <a class="btn" href="#" data-cal target="_blank" rel="noopener"><svg class="i"><use href="#i-cal"/></svg> <span data-i="r_cal">Reservar llamada</span></a>
-            <a class="btn ghost" href="https://t.me/kimberlytq1" target="_blank" rel="noopener"><svg class="i"><use href="#i-send"/></svg> <span data-i="r_tg">Escribir por Telegram</span></a>
-          </div>
-        </div>
-        <p class="err" id="err" hidden></p>
-        <div class="qnav" id="qnav">
-          <button type="button" class="back" id="back" disabled data-i="b_back">← Atrás</button>
-          <button type="submit" class="btn" id="next"><span id="nextl" data-i="b_next">Siguiente →</span></button>
-        </div>
-      </form>
     </div>
   </section>
 
@@ -736,12 +745,12 @@ footer p+p{margin-top:.6rem}
 <footer><div class="wrap">
   <div class="row"><span>Scale x10 · IB Partners</span><span style="display:flex;flex-wrap:wrap;gap:.4rem 1.2rem"><span><span data-i="ft_c">Telegram:</span> <a href="https://t.me/kimberlytq1" target="_blank" rel="noopener">@kimberlytq1</a></span><span>Instagram: <a href="https://www.instagram.com/kimberlytatiana_/" target="_blank" rel="noopener">@kimberlytatiana_</a></span></span></div>
   <p data-i="ft_r1">Aviso de riesgo: los CFDs y el Forex son instrumentos complejos y conllevan un alto riesgo de perder dinero rápidamente debido al apalancamiento. Considera si entiendes cómo funcionan y si puedes asumir el riesgo de perder tu dinero.</p>
-  <p data-i="ft_r2">Este contenido es informativo y no constituye asesoría financiera ni de inversión. «x10» es un objetivo de crecimiento, no una promesa de resultados. La calculadora, el teléfono de ejemplo y sus mensajes son ilustrativos. Los resultados dependen de cada IB y no están garantizados. Servicios de broker prestados por TradeQuo; consulta su regulación y disponibilidad en tu país.</p>
+  <p data-i="ft_r2">Este contenido es informativo y no constituye asesoría financiera ni de inversión. «x10» es un objetivo de crecimiento, no una promesa de resultados. La calculadora, el teléfono de ejemplo y sus mensajes son ilustrativos. Los resultados dependen de cada IB y no están garantizados. Servicios de broker prestados por nuestro broker aliado, TradeQuo. No apto para menores de edad.</p>
 </div></footer>
 
 <script>
 const CALENDLY = "https://calendly.com/kimberlygomez/15min";
-const FORM_EMAIL = "kimberly.g@tradequo.com"; // correo que recibe los diagnósticos (vía FormSubmit)
+const FORM_EMAIL = "kimberly300kw@gmail.com"; // correo que recibe los diagnósticos (vía FormSubmit)
 const EN = {
  n1:"The 4 levers",n2:"Calculator",n3:"Team",n4:"FAQ",n_cta:"x10 diagnosis",
  h_pill:"Partner program for IBs",h_t1:"Let me scale your IB business",
@@ -758,15 +767,15 @@ const EN = {
  j2t:"Activate",j2p:"Bots and funnels that take people from the first message to a trading account.",
  j3t:"Retain",j3p:"Signals, academy and AI under your brand: reasons to stay every day.",
  j4t:"Multiply",j4p:"Sub-IBs, referrals and new campaigns so your network grows on its own.",
- l_eb:"The method",l_t:"The 4 x10 levers.",l_p:"Each lever adds on its own. Together, they multiply. Pick one to see what's included.",
+ l_eb:"The method",l_t:"The 4 x10 levers.",l_p:"We build, organize and negotiate whatever your community needs. Each lever adds on its own; together, they multiply. Pick one to see what's included.",
  t0:"Terms",t0s:"What you earn per lot",t1:"Arsenal",t1s:"Your tools under your brand",t2:"Autopilot",t2s:"Bots, funnels and CRM",t3:"Audience",t3s:"More of the right people seeing you",
  k0:"Lever 1",k1:"Lever 2",k2:"Lever 3",k3:"Lever 4",
- pl0:"What you earn for every lot your network trades.",c0a:"Direct agreement with our partner broker, TradeQuo",c0b:"Per-lot commission based on your volume",c0c:"Sub-IB network with its own structure",c0d:"IB Desk to track your commissions",c0e:"Month-by-month targets",c0f:"Loyalty and referral program",
+ pl0:"What you earn for every lot your network trades.",c0a:"Terms and rebates negotiated with you, case by case",c0b:"Per-lot commission based on your volume",c0c:"Sub-IB network with its own structure",c0d:"IB Desk to track your commissions",c0e:"Month-by-month targets",c0f:"Loyalty and referral program",
  pl1:"Tools your clients can't find anywhere else.",c1a:"Telegram channels with automatic entries",c1b:"Your own indicator built on your strategy",c1c:"Scanners and alerts",c1d:"TradingView Premium inside your app",c1e:"Copy trading and social ranking",c1f:"Academy and live sessions",c1g:"AI copilot and AI journal",c1h:"News, calendar and analysis",
  pl2:"Your business keeps moving when your phone is off.",c2a:"XMP Club app under your brand",c2b:"Website and sign-up funnels",c2c:"Onboarding via Telegram and WhatsApp",c2d:"ManyChat: comment → DM → sign-up",c2e:"AI agent on Telegram",c2f:"CRM and tracking for every client",
  pl3:"More of the right people seeing your offer every week.",c3a:"Content and personal brand",c3b:"Paid campaigns",c3c:"Ready-to-post content",c3d:"Webinars, events and giveaways",c3e:"Closing scripts",c3f:"Monthly review with the team",
- wb:"All available as white label.",
- w_eb:"White label",w_t:"Your community sees your brand. Never ours.",w_p:"We build every tool with your name, logo and colors. To your clients, it's all yours.",
+ wb:"White label from day one, subject to conditions.",
+ w_eb:"White label",w_t:"Your community sees your brand from day one.",w_p:"We build your tools with your name, logo and colors from the start, subject to conditions we agree on together.",
  w1t:"Telegram channels that run themselves",w1p:"They post entries, manage VIP access and welcome every new client.",
  w2t:"An indicator built on your strategy",w2p:"We turn the way you trade into a TradingView indicator only your clients have.",
  w3t:"Scanners and alerts",w3p:"They spot your setups and send alerts to your channels.",
@@ -780,7 +789,7 @@ const EN = {
  dw3:"Channels and bots",dr1:"VIP channel · Telegram",ds_on:"ACTIVE",ds_on2:"ACTIVE",dr2:"Welcome bot",dr3:"Setup scanner",ds_al:"alerts",dr4:"AI agent",ds_ch:"chats",
  dw4:"Academy and events",dr5:"Live session · 6pm",ds_hoy:"TODAY",dr6:"Course: risk management",dr7:"Lead-gen webinar",ds_jue:"THU",dr8:"Own indicator · users",
  dw5:"Network and campaigns",dr9:"Sub-IB · North Team",dr10:"Sub-IB · South Team",dr11:"Meta Ads campaign",dr12:"ManyChat «PARTNER»",
- db_n:"Illustrative example · fictional figures",dl1:"See everything",dl1p:"Commissions, clients and campaigns in real time, in one place.",dl2:"All connected",dl2p:"Channels, bots, academy and app talk to each other and feed your CRM.",dl3:"Under your brand",dl3p:"Your logo, your colors and your domain. Your clients never see ours.",dl4:"With a team",dl4p:"Behind every widget there are people who set it up and improve it with you.",
+ db_n:"Illustrative example · fictional figures",dl1:"See everything",dl1p:"Commissions, clients and campaigns in real time, in one place.",dl2:"All connected",dl2p:"Channels, bots, academy and app talk to each other and feed your CRM.",dl3:"Under your brand",dl3p:"Your logo, your colors and your domain, subject to conditions.",dl4:"With a team",dl4p:"Behind every widget there are people who set it up and improve it with you.",
  x_eb:"The 19 apps",x_t:"A complete platform. Ready for your brand.",x_p:"Your clients log in with one account, in the browser or as an app, no downloads.",
  xa:"Trading and AI",xa2:"AI Agent",xb:"Markets",xb1:"Market Analysis",xb2:"News",xb3:"Calendar",xb4:"Dashboard",xc:"Education",xc1:"Academy",xc2:"Events",xc3:"Games",xd:"Community and management",xd1:"Community",xd2:"Loyalty",
  x_n:"Plus direct access to the club's Telegram channels. TradingView is a trademark of its owner. Available apps may vary by plan.",
@@ -796,11 +805,11 @@ const EN = {
  q_eb:"Questions",q_t:"What people ask us before starting.",
  q1:"How long does launch take?",a1:"It depends on which levers you switch on. On the call we give you a plan with dates for each part.",
  q2:"What do I need to start?",a2:"A community or network, even a small one, and the drive to work it. If you don't have a brand yet, we build it with you.",
- q3:"What happens to the clients I already have?",a3:"We review your case and plan each step so you don't lose anyone along the way.",
- q4:"Who owns the brand?",a4:"You do. Your name, your logo and your community. We provide the tech and the team behind it.",
+ q3:"What happens to the clients I already have?",a3:"We review your case and plan each step to minimize the risk of losing clients along the way.",
+ q4:"Who owns the brand?",a4:"Yours. Your name, your logo and your community from day one, subject to conditions we agree on together. We provide the tech and the team behind it.",
  q5:"How do I earn?",a5:"Through commissions on the volume your network trades. You can simulate it in the calculator and we go through it in detail on the call.",
  q6:"Is “x10” a guarantee?",a6:"No. It's the goal we work toward. Results depend on your community, your market and your work, and are not guaranteed.",
- q7:"How much does it cost?",a7:"It depends on what you need. We'll cover it in our first conversation, no commitment.",
+ q7:"How much does it cost?",a7:"It depends on what we build together. Everything is negotiated case by case in our first conversation, no commitment.",
  q8:"How do I start?",a8:"Take your x10 diagnosis or book a call. You can also message us on Telegram: @kimberlytq1.",
  d_eb:"x10 diagnosis",d_t:"Which lever is holding you back?",d_p:"Answer 5 quick questions. You'll get your score on each lever and we'll email you the next step.",
  d_l1:"Your 0–100 score instantly",d_l2:"The lever worth switching on first",d_l3:"A starter plan in your inbox",
@@ -809,12 +818,12 @@ const EN = {
  qz3:"How big is your community?",o30:"Fewer than 500",o31:"500 to 5k",o32:"5k to 50k",o33:"More than 50k",
  qz4:"What tools of your own do you offer today?",o40:"None",o41:"I share other people's",o42:"Some under my brand",o43:"Everything under my brand",
  qz5:"How do you handle new leads?",o50:"All by hand via DM",o51:"Some auto-replies",o52:"I have a funnel set up",o53:"Fully automated",
- qz6:"Where should we send your diagnosis?",f_n:"Name",f_e:"Email",f_t:"Phone (with country code)",f_c:"By submitting you agree to be contacted about the partner program. We don't share your data.",
+ qz6:"Where should we send your diagnosis?",f_n:"Name",f_e:"Email",f_t:"Phone (with country code)",f_c:"By submitting you agree to be contacted by WhatsApp, phone and email about the program; you can opt out at any time. We don't share your data. Not available to minors.",
  r_cal:"Book a call",r_tg:"Message on Telegram",b_back:"← Back",b_next:"Next →",
  fi_t:"Your community already trusts you. Give it a system that matches.",fi_p:"Every month without a system is volume you don't get back. Let's talk about scaling your business.",fi_c1:"Get your diagnosis",fi_c2:"Book a call",
  ft_c:"Telegram:",
  ft_r1:"Risk warning: CFDs and Forex are complex instruments and come with a high risk of losing money rapidly due to leverage. Consider whether you understand how they work and whether you can afford the risk of losing your money.",
- ft_r2:"This content is informational and is not financial or investment advice. “x10” is a growth goal, not a promise of results. The calculator, the sample phone and its messages are illustrative. Results depend on each IB and are not guaranteed. Broker services provided by TradeQuo; check its regulation and availability in your country."
+ ft_r2:"This content is informational and is not financial or investment advice. “x10” is a growth goal, not a promise of results. The calculator, the sample phone and its messages are illustrative. Results depend on each IB and are not guaranteed. Broker services provided by our partner broker, TradeQuo. Not available to minors."
 };
 const PT = {
  n1:"As 4 alavancas",n2:"Calculadora",n3:"Equipe",n4:"Perguntas",n_cta:"Diagnóstico x10",
@@ -832,15 +841,15 @@ const PT = {
  j2t:"Ativar",j2p:"Bots e funis que levam da primeira mensagem a uma conta operando.",
  j3t:"Reter",j3p:"Sinais, academia e IA com a sua marca: motivos para ficar todo dia.",
  j4t:"Multiplicar",j4p:"Sub-IBs, indicações e novas campanhas para sua rede crescer sozinha.",
- l_eb:"O método",l_t:"As 4 alavancas x10.",l_p:"Cada alavanca soma sozinha. Juntas, multiplicam. Escolha uma para ver o que inclui.",
+ l_eb:"O método",l_t:"As 4 alavancas x10.",l_p:"Construímos, organizamos e negociamos o que sua comunidade precisar. Cada alavanca soma sozinha; juntas, multiplicam. Escolha uma para ver o que inclui.",
  t0:"Condições",t0s:"O que você ganha por lote",t1:"Arsenal",t1s:"Suas ferramentas com a sua marca",t2:"Piloto automático",t2s:"Bots, funis e CRM",t3:"Audiência",t3s:"Mais pessoas certas vendo você",
  k0:"Alavanca 1",k1:"Alavanca 2",k2:"Alavanca 3",k3:"Alavanca 4",
- pl0:"O que você ganha por cada lote que sua rede opera.",c0a:"Acordo direto com nossa corretora parceira, TradeQuo",c0b:"Comissão por lote conforme seu volume",c0c:"Rede de sub-IBs com estrutura própria",c0d:"IB Desk para acompanhar suas comissões",c0e:"Plano de metas mês a mês",c0f:"Programa de fidelidade e indicações",
+ pl0:"O que você ganha por cada lote que sua rede opera.",c0a:"Condições e rebates negociados com você, caso a caso",c0b:"Comissão por lote conforme seu volume",c0c:"Rede de sub-IBs com estrutura própria",c0d:"IB Desk para acompanhar suas comissões",c0e:"Plano de metas mês a mês",c0f:"Programa de fidelidade e indicações",
  pl1:"Ferramentas que seus clientes não encontram em outro lugar.",c1a:"Canais de Telegram com entradas automáticas",c1b:"Indicador próprio com a sua estratégia",c1c:"Scanners e alertas",c1d:"TradingView Premium dentro do seu app",c1e:"Copy trading e ranking social",c1f:"Academia e sessões ao vivo",c1g:"Copiloto e diário com IA",c1h:"Notícias, calendário e análises",
  pl2:"Seu negócio continua avançando quando você desliga o celular.",c2a:"App do XMP Club com a sua marca",c2b:"Site e funis de cadastro",c2c:"Onboarding por Telegram e WhatsApp",c2d:"ManyChat: comentário → DM → cadastro",c2e:"Agente de IA no Telegram",c2f:"CRM e acompanhamento de cada cliente",
  pl3:"Mais pessoas certas vendo sua oferta toda semana.",c3a:"Conteúdo e marca pessoal",c3b:"Campanhas pagas",c3c:"Peças prontas para publicar",c3d:"Webinars, eventos e sorteios",c3e:"Roteiros de fechamento",c3f:"Revisão mensal com a equipe",
- wb:"Tudo disponível em white label.",
- w_eb:"White label",w_t:"Sua comunidade vê a sua marca. Nunca a nossa.",w_p:"Criamos cada ferramenta com seu nome, seu logo e suas cores. Para seus clientes, tudo é seu.",
+ wb:"White label desde o primeiro dia, sujeito a condições.",
+ w_eb:"White label",w_t:"Sua comunidade vê a sua marca desde o primeiro dia.",w_p:"Criamos suas ferramentas com seu nome, seu logo e suas cores desde o início, sujeito a condições que definimos juntos na negociação.",
  w1t:"Canais de Telegram que funcionam sozinhos",w1p:"Publicam entradas, gerenciam o acesso VIP e dão boas-vindas a cada cliente novo.",
  w2t:"Um indicador com a sua estratégia",w2p:"Transformamos sua forma de operar em um indicador para TradingView que só seus clientes têm.",
  w3t:"Scanners e alertas",w3p:"Detectam seus setups e enviam alertas para seus canais.",
@@ -854,7 +863,7 @@ const PT = {
  dw3:"Canais e bots",dr1:"Canal VIP · Telegram",ds_on:"ATIVO",ds_on2:"ATIVO",dr2:"Bot de boas-vindas",dr3:"Scanner de setups",ds_al:"alertas",dr4:"Agente IA",ds_ch:"chats",
  dw4:"Academia e eventos",dr5:"Sessão ao vivo · 18h",ds_hoy:"HOJE",dr6:"Curso: gestão de risco",dr7:"Webinar de captação",ds_jue:"QUI",dr8:"Indicador próprio · usuários",
  dw5:"Rede e campanhas",dr9:"Sub-IB · Equipe Norte",dr10:"Sub-IB · Equipe Sul",dr11:"Campanha Meta Ads",dr12:"ManyChat «PARTNER»",
- db_n:"Exemplo ilustrativo · números fictícios",dl1:"Você vê tudo",dl1p:"Comissões, clientes e campanhas em tempo real, em um só lugar.",dl2:"Tudo conectado",dl2p:"Canais, bots, academia e app conversam entre si e alimentam seu CRM.",dl3:"Com a sua marca",dl3p:"Seu logo, suas cores e seu domínio. Seus clientes nunca veem o nosso.",dl4:"Com equipe",dl4p:"Por trás de cada widget há pessoas que configuram e melhoram com você.",
+ db_n:"Exemplo ilustrativo · números fictícios",dl1:"Você vê tudo",dl1p:"Comissões, clientes e campanhas em tempo real, em um só lugar.",dl2:"Tudo conectado",dl2p:"Canais, bots, academia e app conversam entre si e alimentam seu CRM.",dl3:"Com a sua marca",dl3p:"Seu logo, suas cores e seu domínio, sujeito a condições.",dl4:"Com equipe",dl4p:"Por trás de cada widget há pessoas que configuram e melhoram com você.",
  x_eb:"Os 19 apps",x_t:"Uma plataforma completa. Pronta para a sua marca.",x_p:"Seus clientes entram com uma só conta, pelo navegador ou como app, sem downloads.",
  xa:"Trading e IA",xa2:"Agente IA",xb:"Mercado",xb1:"Análise de Mercado",xb2:"Notícias",xb3:"Calendário",xb4:"Painel",xc:"Educação",xc1:"Academia",xc2:"Eventos",xc3:"Jogos",xd:"Comunidade e gestão",xd1:"Comunidade",xd2:"Fidelidade",
  x_n:"Além disso, acesso direto aos canais de Telegram do clube. TradingView é uma marca do seu proprietário. Os apps disponíveis podem variar conforme o plano.",
@@ -870,11 +879,11 @@ const PT = {
  q_eb:"Perguntas",q_t:"O que nos perguntam antes de começar.",
  q1:"Quanto tempo leva o lançamento?",a1:"Depende das alavancas que você ativar. Na chamada passamos um plano com datas para cada parte.",
  q2:"O que preciso ter para começar?",a2:"Uma comunidade ou rede, mesmo pequena, e vontade de trabalhá-la. Se ainda não tem marca, criamos com você.",
- q3:"O que acontece com os clientes que já tenho?",a3:"Analisamos seu caso e planejamos cada passo para você não perder ninguém no caminho.",
- q4:"De quem é a marca?",a4:"Sua. Seu nome, seu logo e sua comunidade. Nós colocamos a tecnologia e a equipe por trás.",
+ q3:"O que acontece com os clientes que já tenho?",a3:"Analisamos seu caso e planejamos cada passo para reduzir ao mínimo o risco de perder clientes no caminho.",
+ q4:"De quem é a marca?",a4:"Sua. Seu nome, seu logo e sua comunidade desde o primeiro dia, sujeito a condições que acordamos juntos. Nós colocamos a tecnologia e a equipe por trás.",
  q5:"Como eu ganho dinheiro?",a5:"Com comissões pelo volume que sua rede opera. Você pode simular na calculadora e revisamos em detalhe na chamada.",
  q6:"«x10» é uma garantia?",a6:"Não. É o objetivo com o qual trabalhamos. Os resultados dependem da sua comunidade, do seu mercado e do seu trabalho, e não são garantidos.",
- q7:"Quanto custa?",a7:"Depende do que você precisa. Vemos isso na primeira conversa, sem compromisso.",
+ q7:"Quanto custa?",a7:"Depende do que construirmos juntos. Tudo é negociado caso a caso na primeira conversa, sem compromisso.",
  q8:"Como começo?",a8:"Faça seu diagnóstico x10 ou agende uma chamada. Você também pode nos escrever no Telegram: @kimberlytq1.",
  d_eb:"Diagnóstico x10",d_t:"Qual alavanca está te travando?",d_p:"Responda 5 perguntas rápidas. Você recebe sua pontuação em cada alavanca e enviamos o próximo passo por e-mail.",
  d_l1:"Sua pontuação de 0 a 100 na hora",d_l2:"A alavanca que mais vale ativar",d_l3:"Um plano inicial no seu e-mail",
@@ -883,18 +892,18 @@ const PT = {
  qz3:"Qual o tamanho da sua comunidade?",o30:"Menos de 500",o31:"500 a 5 mil",o32:"5 mil a 50 mil",o33:"Mais de 50 mil",
  qz4:"Quais ferramentas próprias você oferece hoje?",o40:"Nenhuma",o41:"Compartilho as de outros",o42:"Algumas com a minha marca",o43:"Tudo com a minha marca",
  qz5:"Como você atende seus interessados?",o50:"Tudo no manual por DM",o51:"Algumas respostas automáticas",o52:"Tenho um funil montado",o53:"Tudo automatizado",
- qz6:"Para onde enviamos seu diagnóstico?",f_n:"Nome",f_e:"E-mail",f_t:"Telefone (com código do país)",f_c:"Ao enviar, você aceita ser contatado sobre o programa de parceiros. Não compartilhamos seus dados.",
+ qz6:"Para onde enviamos seu diagnóstico?",f_n:"Nome",f_e:"E-mail",f_t:"Telefone (com código do país)",f_c:"Ao enviar, você aceita ser contatado por WhatsApp, telefone e e-mail sobre o programa; pode cancelar quando quiser. Não compartilhamos seus dados. Não disponível para menores de idade.",
  r_cal:"Agendar chamada",r_tg:"Escrever no Telegram",b_back:"← Voltar",b_next:"Próximo →",
  fi_t:"Sua comunidade já confia em você. Dê a ela um sistema à altura.",fi_p:"Cada mês sem sistema é volume que não volta. Vamos conversar sobre como escalar seu negócio.",fi_c1:"Faça seu diagnóstico",fi_c2:"Agendar uma chamada",
  ft_c:"Telegram:",
  ft_r1:"Aviso de risco: CFDs e Forex são instrumentos complexos e envolvem alto risco de perder dinheiro rapidamente devido à alavancagem. Considere se você entende como funcionam e se pode assumir o risco de perder seu dinheiro.",
- ft_r2:"Este conteúdo é informativo e não constitui consultoria financeira ou de investimento. «x10» é uma meta de crescimento, não uma promessa de resultados. A calculadora, o celular de exemplo e suas mensagens são ilustrativos. Os resultados dependem de cada IB e não são garantidos. Serviços de corretora prestados pela TradeQuo; consulte sua regulamentação e disponibilidade no seu país."
+ ft_r2:"Este conteúdo é informativo e não constitui consultoria financeira ou de investimento. «x10» é uma meta de crescimento, não uma promessa de resultados. A calculadora, o celular de exemplo e suas mensagens são ilustrativos. Os resultados dependem de cada IB e não são garantidos. Serviços de corretora prestados pela nossa corretora parceira, TradeQuo. Não disponível para menores de idade."
 };
 const T={
  pt:{q:(n)=>n<5?`Pergunta ${n+1} de 5`:"Último passo",send:"Ver meu diagnóstico →",sending:"Enviando…",
   err_opt:"Escolha uma opção para continuar.",err_name:"Escreva seu nome.",err_mail:"Confira seu e-mail: parece incompleto.",err_tel:"Escreva seu telefone com código do país.",
   levers:["Condições","Arsenal","Piloto automático","Audiência"],
-  tiers:[["CONSTRUIR","Começamos pela base.","Sua prioridade é montar sua oferta e suas primeiras ferramentas com a sua marca."],["ACELERAR","Você tem tração. Falta o sistema.","Já existe comunidade e volume. Ativar as alavancas fracas pode acelerar seu crescimento."],["ESCALAR","Você está pronto(a) para x10.","Seu negócio tem tamanho para o sistema completo em white label e uma equipe dedicada."]],
+  tiers:[["CONSTRUIR","Começamos pela base.","Sua prioridade é montar sua oferta e suas primeiras ferramentas com a sua marca."],["ACELERAR","Você tem tração. Falta o sistema.","Já existe comunidade e volume. Ativar as alavancas fracas pode acelerar seu crescimento."],["ESCALAR","Você está pronto(a) para x10.","Seu negócio tem tamanho para o sistema completo e uma equipe dedicada em white label."]],
   weak:w=>`Sua alavanca mais fraca: ${w}. É por ela que começaríamos.`,
   ok:"Pronto. Recebemos seu diagnóstico e vamos te escrever por e-mail muito em breve.",
   fail:"Não conseguimos enviar seus dados. Agende uma chamada ou escreva no Telegram e vemos juntos.",
@@ -902,7 +911,7 @@ const T={
  es:{q:(n,t)=>n<5?`Pregunta ${n+1} de 5`:"Último paso",send:"Ver mi diagnóstico →",sending:"Enviando…",
   err_opt:"Elige una opción para continuar.",err_name:"Escribe tu nombre.",err_mail:"Revisa tu email: parece incompleto.",err_tel:"Escribe tu teléfono con código de país.",
   levers:["Condiciones","Arsenal","Piloto automático","Audiencia"],
-  tiers:[["CONSTRUIR","Empezamos por la base.","Tu prioridad es armar tu oferta y tus primeras herramientas con tu marca."],["ACELERAR","Tienes tracción. Falta el sistema.","Ya hay comunidad y volumen. Activar las palancas débiles puede acelerar tu crecimiento."],["ESCALAR","Estás listo/a para x10.","Tu negocio tiene tamaño para el sistema completo en marca blanca y un equipo dedicado."]],
+  tiers:[["CONSTRUIR","Empezamos por la base.","Tu prioridad es armar tu oferta y tus primeras herramientas con tu marca."],["ACELERAR","Tienes tracción. Falta el sistema.","Ya hay comunidad y volumen. Activar las palancas débiles puede acelerar tu crecimiento."],["ESCALAR","Estás listo/a para x10.","Tu negocio tiene tamaño para el sistema completo y un equipo dedicado en marca blanca."]],
   weak:w=>`Tu palanca más débil: ${w}. Por ahí empezaríamos.`,
   ok:"Listo. Recibimos tu diagnóstico y te escribiremos por email muy pronto.",
   fail:"No pudimos enviar tus datos. Reserva una llamada o escríbenos a Telegram y lo vemos juntos.",
@@ -910,7 +919,7 @@ const T={
  en:{q:(n,t)=>n<5?`Question ${n+1} of 5`:"Last step",send:"See my diagnosis →",sending:"Sending…",
   err_opt:"Pick an option to continue.",err_name:"Add your name.",err_mail:"Check your email: it looks incomplete.",err_tel:"Add your phone with country code.",
   levers:["Terms","Arsenal","Autopilot","Audience"],
-  tiers:[["BUILD","Let's start with the foundation.","Your priority is building your offer and first tools under your brand."],["ACCELERATE","You have traction. You're missing the system.","You already have community and volume. Switching on your weak levers can speed up your growth."],["SCALE","You're ready for x10.","Your business is big enough for the full white-label system and a dedicated team."]],
+  tiers:[["BUILD","Let's start with the foundation.","Your priority is building your offer and first tools under your brand."],["ACCELERATE","You have traction. You're missing the system.","You already have community and volume. Switching on your weak levers can speed up your growth."],["SCALE","You're ready for x10.","Your business is big enough for the full system and a dedicated team under white label."]],
   weak:w=>`Your weakest lever: ${w}. That's where we'd start.`,
   ok:"Done. We got your diagnosis and will email you very soon.",
   fail:"We couldn't send your details. Book a call or message us on Telegram and we'll go through it together.",
@@ -1011,7 +1020,7 @@ $("quiz").addEventListener("submit",async e=>{
   steps.forEach(s=>s.hidden=true);$("qnav").hidden=true;$("err").hidden=true;$("res").hidden=false;updQ();renderRes();
 });
 go(0);calc();
-try{const s=localStorage.getItem("lang");if(s==="en"||s==="pt")setLang(s)}catch(e){}
+try{const s=new URLSearchParams(location.search).get("lang")||localStorage.getItem("lang");if(s==="en"||s==="pt")setLang(s)}catch(e){}
 </script>
 
 </body></html>
