@@ -1,0 +1,304 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Scale x10 · Traders</title>
+<meta name="description" content="Las herramientas que un trader necesita para avanzar, en un solo ecosistema. Crea tu cuenta, deposita desde 300 USD y activa todo.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#09090A;--bg2:#0F0F11;--panel:#141417;--panel2:#1A1A1E;--line:#26262B;--line2:#33333A;
+  --fg:#F4F2EF;--muted:#9B9792;--dim:#6E6A66;
+  --red:#E5252C;--red2:#FF4A50;--red-soft:rgba(229,37,44,.12);--red-glow:rgba(229,37,44,.35);--ok:#3ECF8E;
+  --display:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.6;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(55% 40% at 15% -5%,rgba(229,37,44,.14),transparent 70%),radial-gradient(40% 30% at 100% 40%,rgba(229,37,44,.06),transparent 70%)}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--display);font-weight:800;line-height:1.08;letter-spacing:-.025em;margin:0;text-wrap:balance}
+p{margin:0}.muted{color:var(--muted)}
+.label{display:inline-block;font:600 .74rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--red);background:var(--red-soft);border-radius:6px;padding:.3rem .65rem}
+.pill{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--line2);background:var(--panel);border-radius:999px;padding:.35rem .85rem;font-size:.8rem;color:var(--muted)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 4px var(--red-soft)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--red);color:#fff;padding:.95rem 1.4rem;border-radius:10px;text-decoration:none;border:0;cursor:pointer;font:700 .98rem var(--display);box-shadow:0 8px 28px -10px var(--red-glow);transition:transform .15s,background .15s}
+.btn:hover{background:var(--red2);transform:translateY(-1px)}
+.btn.ghost{background:var(--panel);border:1px solid var(--line2);color:var(--fg);box-shadow:none}.btn.ghost:hover{border-color:var(--red)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+header{position:sticky;top:0;z-index:30;background:rgba(9,9,10,.84);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.75rem}
+.logo{font:800 1.05rem var(--display);text-decoration:none}.logo b{color:var(--red)}.logo small{font:600 .7rem var(--mono);color:var(--muted);margin-left:.4rem;letter-spacing:.1em}
+.links{display:flex;gap:1.5rem;font-size:.88rem;color:var(--muted)}.links a{text-decoration:none}.links a:hover{color:var(--fg)}
+.nav .btn{padding:.6rem 1rem;font-size:.85rem}
+.hero{padding-block:4rem 2rem;max-width:800px}
+.hero h1{font-size:clamp(2.2rem,5.2vw,3.8rem);margin-top:1.2rem}.hero h1 em{color:var(--red);font-style:italic}
+.hero .sub{font-size:1.1rem;color:var(--muted);margin-top:1.2rem;max-width:42rem}
+.hero .sub+.sub{margin-top:.8rem}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
+.block{padding-block:4.5rem 0}
+.head{max-width:720px;margin-bottom:2rem}.head h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-top:.9rem}.head p{color:var(--muted);margin-top:.9rem;font-size:1.05rem}
+.track{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:1.4rem}
+.track h3{font-size:1rem;font-family:var(--mono);font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.steps{list-style:none;margin:1rem 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.steps li{background:var(--bg2);border:1px solid var(--line2);border-radius:14px;padding:1.1rem}
+.steps li.main{border-color:var(--red);background:var(--red-soft)}
+.steps .n{font:600 .72rem var(--mono);color:var(--red);letter-spacing:.1em}
+.steps h4{font-size:1.1rem;margin-top:.3rem}
+.steps p{color:var(--muted);font-size:.92rem;margin-top:.4rem}
+.steps a.mini{display:inline-block;margin-top:.7rem;font:700 .88rem var(--display);color:var(--red2);text-decoration:none}
+.steps a.mini:hover{text-decoration:underline}
+.help{margin-top:1.1rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:1.1rem}
+.help p{color:var(--muted);font-size:.95rem;max-width:34rem}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:1.3rem}
+.card h3{font-size:1.08rem}.card p{color:var(--muted);margin-top:.5rem;font-size:.95rem}
+.card .tag{font:600 .68rem var(--mono);letter-spacing:.1em;color:var(--red);text-transform:uppercase}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:16px}
+table{width:100%;border-collapse:collapse;min-width:520px}
+th,td{padding:.9rem 1rem;text-align:left;border-bottom:1px solid var(--line);font-size:.93rem;vertical-align:top}
+thead th{font-family:var(--display);background:var(--panel2);font-size:.95rem}
+thead th.hl{background:var(--red);color:#fff}
+td.hl{background:rgba(229,37,44,.06)}
+tbody th{font-weight:600;color:var(--muted)}
+tr:last-child td,tr:last-child th{border-bottom:0}
+.y{color:var(--ok);font-weight:600}.n{color:var(--dim)}
+.num{counter-reset:n;list-style:none;padding:0;margin:0;display:grid;gap:.7rem}
+.num li{counter-increment:n;display:grid;grid-template-columns:40px 1fr;gap:.9rem;align-items:start}
+.num li::before{content:counter(n);width:36px;height:36px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font:800 .95rem var(--display)}
+.num p{color:var(--muted);font-size:.95rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+details{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1rem 1.2rem}
+details+details{margin-top:.6rem}
+summary{cursor:pointer;font:700 1rem var(--display)}
+details p{color:var(--muted);margin-top:.6rem}
+.final{text-align:center;padding:4rem 1rem;margin-top:4.5rem;border-top:1px solid var(--line)}
+.final h2{font-size:clamp(1.8rem,3.6vw,2.6rem)}.final .ctas{justify-content:center}
+footer{border-top:1px solid var(--line);padding-block:2rem 3rem;font-size:.8rem;color:var(--dim)}
+footer p+p{margin-top:.7rem}
+.lang{display:flex;border:1px solid var(--line2);border-radius:8px;overflow:hidden}
+.lang button{background:none;border:0;color:var(--muted);font:600 .72rem var(--mono);padding:.45rem .55rem;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--red);color:#fff}
+@media (max-width:900px){.steps,.grid,.two{grid-template-columns:1fr}.links{display:none}}
+@media (max-width:420px){.nav .btn{display:none}}
+</style></head><body>
+<header><div class="wrap nav">
+  <a class="logo" href="../">Scale <b>x10</b><small>TRADERS</small></a>
+  <nav class="links"><a href="#pasos">3 pasos</a><a href="#herramientas">Herramientas</a><a href="#acceso">Accesos</a><a href="#preguntas">Preguntas</a></nav>
+  <div style="display:flex;gap:.6rem;align-items:center">
+    <div class="lang" role="group" aria-label="Idioma / Language"><button type="button" data-lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" aria-pressed="false">EN</button><button type="button" data-lang="pt" aria-pressed="false">PT</button></div>
+    <a class="btn" href="#" data-signup>Crear mi cuenta</a>
+  </div>
+</div></header>
+
+<main class="wrap">
+  <section class="hero">
+    <span class="pill"><span class="dot"></span>Para traders</span>
+    <h1>Las herramientas que te hacen avanzar, <em>sin pagar suscripciones</em>.</h1>
+    <p class="sub">Sabemos que un trader necesita buenas herramientas para avanzar y mejorar sus resultados. También sabemos que acceder a ellas puede costar cientos de dólares al mes.</p>
+    <p class="sub">Por eso queremos que tengas esta información: desbloquea todo el ecosistema desde 300 USD en tu cuenta personal para entrar al mercado, sin suscripciones aparte, y te acompañamos para que lleves tu trading al siguiente nivel, x10.</p>
+    <div class="ctas">
+      <a class="btn" href="#" data-signup>Crear mi cuenta</a>
+      <a class="btn ghost" href="#herramientas">Ver las herramientas</a>
+    </div>
+  </section>
+
+  <section id="pasos" class="block" style="padding-top:1rem">
+    <div class="track">
+      <h3>Activa todo en 3 pasos</h3>
+      <ol class="steps">
+        <li><span class="n">PASO 1</span><h4>Crea tu cuenta</h4><p>Regístrate en un par de minutos y completa tu verificación de identidad.</p><a class="mini" href="#" data-signup>Crear mi cuenta →</a><br><a class="mini" href="#paso2" style="color:var(--muted);font-weight:600">Ya tengo cuenta → ir al paso 2</a></li>
+        <li class="main" id="paso2" style="scroll-margin-top:90px"><span class="n">PASO 2</span><h4>Deposita desde 300 USD</h4><p>Es tu capital, en tu propia cuenta de trading. Con 300 USD o más se activan todas las herramientas.</p><a class="mini" href="#" data-wa>Necesito ayuda con mi depósito →</a></li>
+        <li><span class="n">PASO 3</span><h4>Enlaza tu cuenta y opera con todo</h4><p>Conecta tu cuenta de trading en el journal de XMP. Así verificamos tu depósito y se desbloquea todo.</p><a class="mini" href="#herramientas">Ver lo que se activa →</a></li>
+      </ol>
+      <div class="help">
+        <a class="btn ghost" href="#" data-wa>Necesito ayuda con mi depósito</a>
+        <p>Si necesitas ayuda, déjame un mensaje: organizamos una reunión y te acompaño directamente en el proceso.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="herramientas" class="block">
+    <div class="head"><span class="label">Lo que se activa</span><h2>Herramientas que normalmente pagarías por separado.</h2><p>Todas juntas, conectadas a tu cuenta. Si eres nuevo, te dan estructura para avanzar mejor. Si ya operas, te ahorran suscripciones. ¿Necesitas algo distinto? Cuéntamelo: lo organizamos y lo adaptamos a ti.</p></div>
+    <div class="grid">
+      <div class="card"><span class="tag">Gráficos</span><h3>TradingView Premium</h3><p>La versión Premium para analizar con todos los gráficos e indicadores, y operar desde el servidor de nuestro broker aliado.</p></div>
+      <div class="card"><span class="tag">Plataforma</span><h3>XMP</h3><p>Tu centro de trading: análisis de mercado, noticias, calendario económico, academia, eventos en vivo y comunidad, en una sola cuenta.</p></div>
+      <div class="card"><span class="tag">IA</span><h3>Asistente y agente IA</h3><p>Te ayuda a analizar el mercado, ordenar tus ideas y resolver dudas en tu proceso.</p></div>
+      <div class="card"><span class="tag">Escáner</span><h3>Escáner de mercado</h3><p>Encuentra oportunidades según tus criterios para que no tengas que buscarlas a mano.</p></div>
+      <div class="card"><span class="tag">Indicadores</span><h3>Indicadores premium</h3><p>Herramientas exclusivas que se habilitan con tu acceso completo.</p></div>
+      <div class="card"><span class="tag">Control</span><h3>Journal</h3><p>Registra tus operaciones automáticamente para ver qué funciona y qué mejorar.</p></div>
+    </div>
+  </section>
+
+  <section id="acceso" class="block">
+    <div class="head"><span class="label">Qué incluye</span><h2>Menos de 300 USD o 300 USD y más.</h2><p>Con 300 USD tienes el ecosistema completo. No es un pago: es tu capital, en tu cuenta de trading.</p></div>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Menos de 300 USD</th><th class="hl">300 USD o más · acceso completo</th></tr></thead>
+      <tbody>
+        <tr><th>TradingView Premium</th><td class="y">Sí</td><td class="hl y">Sí</td></tr>
+        <tr><th>XMP</th><td>Acceso parcial</td><td class="hl y">Completo</td></tr>
+        <tr><th>IA y escáner</th><td class="n">Bloqueados</td><td class="hl y">Sí</td></tr>
+        <tr><th>Indicadores premium</th><td class="n">No</td><td class="hl y">Sí</td></tr>
+        <tr><th>Telegram con ideas de trading</th><td class="y">Sí</td><td class="hl y">Sí</td></tr>
+        <tr><th>Acompañamiento personal</th><td class="y">Sí</td><td class="hl y">Sí</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <section class="block">
+    <div class="two">
+      <div class="card">
+        <span class="tag">Ya operas en otro broker</span><h3 style="margin-top:.4rem">Trae tu capital y suma todo el ecosistema</h3>
+        <ol class="num" style="margin-top:1rem">
+          <li><div><h4>Crea tu cuenta con nuestro broker aliado</h4><p>Registro y verificación de identidad.</p></div></li>
+          <li><div><h4>Mueve tu capital</h4><p>Retira de tu broker actual y deposita desde 300 USD.</p></div></li>
+          <li><div><h4>Enlaza tu cuenta en el journal</h4><p>Y sigue operando, ahora con todas las herramientas.</p></div></li>
+        </ol>
+      </div>
+      <div class="card">
+        <span class="tag">Eres nuevo</span><h3 style="margin-top:.4rem">Empieza con estructura desde el día 1</h3>
+        <p>La academia, las sesiones en vivo y el acompañamiento te ayudan a entender el mercado antes de arriesgar. Empieza con el mínimo, aprende con las herramientas y avanza a tu ritmo.</p>
+        <div class="ctas" style="margin-top:1.2rem"><a class="btn ghost" href="#" data-wa>Escribirle a Kimberly</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="preguntas" class="block">
+    <div class="head"><span class="label">Preguntas</span><h2>Lo que nos preguntan antes de empezar.</h2></div>
+    <details><summary>¿Los 300 USD son un pago?</summary><p>No. Es capital en tu propia cuenta de trading. Lo usas para operar.</p></details>
+    <details><summary>¿Por qué tengo que enlazar mi cuenta en el journal?</summary><p>Así tus operaciones quedan registradas en XMP y podemos verificar que tu cuenta tiene depósito para habilitar el acceso completo.</p></details>
+    <details><summary>¿Puedo depositar menos de 300 USD?</summary><p>Sí. Tendrás TradingView Premium, acceso parcial a XMP y el canal de Telegram con ideas de trading. Cuando completes 300 USD, se activa todo.</p></details>
+    <details><summary>¿Necesito experiencia?</summary><p>No. Si eres nuevo, la academia, las sesiones en vivo y el acompañamiento te ayudan a empezar con estructura.</p></details>
+    <details><summary>¿Las herramientas garantizan resultados?</summary><p>No. Son herramientas de apoyo para tu análisis. Los resultados dependen del mercado y de tus decisiones, y puedes perder dinero.</p></details>
+  </section>
+
+  <section class="final">
+    <h2>Activa todo tu ecosistema hoy.</h2>
+    <p class="muted" style="margin-top:.8rem">Si necesitas ayuda, déjame un mensaje y te acompaño en el proceso.</p>
+    <div class="ctas"><a class="btn" href="#" data-signup>Crear mi cuenta</a><a class="btn ghost" href="#" data-wa>Necesito ayuda con mi depósito</a></div>
+  </section>
+</main>
+
+<footer><div class="wrap">
+  <p><b>Advertencia de riesgo:</b> los CFD son instrumentos complejos y conllevan un alto riesgo de perder dinero rápidamente debido al apalancamiento. Considera si comprendes cómo funcionan y si puedes asumir el riesgo de perder tu dinero. «x10» es un objetivo de crecimiento, no una promesa de resultados. Este contenido es informativo y no constituye asesoramiento de inversión.</p>
+  <p>Servicios de broker prestados por nuestro broker aliado, <b>TradeQuo</b>. Servicio no disponible para menores de edad. Al escribirnos aceptas que te contactemos por WhatsApp y email; puedes darte de baja cuando quieras. TradingView es una marca de su propietario.</p>
+  <p><a href="../">← Scale x10</a></p>
+</div></footer>
+
+<script>
+const SIGNUP_URL = "https://my.tradequo.com/register?referral=01a0ddd4-f9af-7277-b5cc-6abcd35bb44e";
+const WHATSAPP = "447498349151";
+const WA_MSG = {
+  es:"Hola Kimberly, vengo de Scale x10 y necesito tu ayuda.",
+  en:"Hi Kimberly, I'm coming from Scale x10 and I need your help.",
+  pt:"Olá Kimberly, venho do Scale x10 e preciso da sua ajuda."
+};
+document.querySelectorAll("[data-signup]").forEach(a=>{a.href=SIGNUP_URL;a.target="_blank";a.rel="noopener"});
+
+/* Traducciones: [ES, EN, PT]. El texto ES debe coincidir con el HTML. */
+const T = [
+["3 pasos","3 steps","3 passos"],
+["Herramientas","Tools","Ferramentas"],
+["Accesos","Access","Acessos"],
+["Preguntas","FAQ","Perguntas"],
+["Crear mi cuenta","Create my account","Criar minha conta"],
+["Para traders","For traders","Para traders"],
+["Las herramientas que te hacen avanzar, <em>sin pagar suscripciones</em>.","The tools that move you forward, <em>without paying for subscriptions</em>.","As ferramentas que te fazem avançar, <em>sem pagar assinaturas</em>."],
+["Sabemos que un trader necesita buenas herramientas para avanzar y mejorar sus resultados. También sabemos que acceder a ellas puede costar cientos de dólares al mes.","We know a trader needs good tools to move forward and improve. We also know access to them can cost hundreds of dollars a month.","Sabemos que um trader precisa de boas ferramentas para avançar e melhorar. Também sabemos que o acesso a elas pode custar centenas de dólares por mês."],
+["Por eso queremos que tengas esta información: desbloquea todo el ecosistema desde 300 USD en tu cuenta personal para entrar al mercado, sin suscripciones aparte, y te acompañamos para que lleves tu trading al siguiente nivel, x10.","That's why we want you to know this: unlock the whole ecosystem from 300 USD in your personal account to enter the market, with no separate subscriptions, and we support you to take your trading to the next level, x10.","Por isso queremos que você saiba: desbloqueie todo o ecossistema a partir de 300 USD na sua conta pessoal para entrar no mercado, sem assinaturas à parte, e te acompanhamos para levar seu trading ao próximo nível, x10."],
+["Ver las herramientas","See the tools","Ver as ferramentas"],
+["Activa todo en 3 pasos","Unlock everything in 3 steps","Ative tudo em 3 passos"],
+["PASO 1","STEP 1","PASSO 1"],["PASO 2","STEP 2","PASSO 2"],["PASO 3","STEP 3","PASSO 3"],
+["Crea tu cuenta","Create your account","Crie sua conta"],
+["Regístrate en un par de minutos y completa tu verificación de identidad.","Sign up in a couple of minutes and complete your identity verification.","Cadastre-se em poucos minutos e conclua sua verificação de identidade."],
+["Crear mi cuenta →","Create my account →","Criar minha conta →"],
+["Ya tengo cuenta → ir al paso 2","I already have an account → go to step 2","Já tenho conta → ir ao passo 2"],
+["Deposita desde 300 USD","Deposit from 300 USD","Deposite a partir de 300 USD"],
+["Es tu capital, en tu propia cuenta de trading. Con 300 USD o más se activan todas las herramientas.","It's your capital, in your own trading account. With 300 USD or more, all the tools are unlocked.","É o seu capital, na sua própria conta de trading. Com 300 USD ou mais, todas as ferramentas são ativadas."],
+["Necesito ayuda con mi depósito →","I need help with my deposit →","Preciso de ajuda com meu depósito →"],
+["Necesito ayuda con mi depósito","I need help with my deposit","Preciso de ajuda com meu depósito"],
+["Enlaza tu cuenta y opera con todo","Link your account and trade with everything","Vincule sua conta e opere com tudo"],
+["Conecta tu cuenta de trading en el journal de XMP. Así verificamos tu depósito y se desbloquea todo.","Connect your trading account in the XMP journal. That's how we verify your deposit and unlock everything.","Conecte sua conta de trading no journal da XMP. Assim verificamos seu depósito e tudo é liberado."],
+["Ver lo que se activa →","See what gets unlocked →","Ver o que é ativado →"],
+["Si necesitas ayuda, déjame un mensaje: organizamos una reunión y te acompaño directamente en el proceso.","If you need help, send me a message: we'll set up a meeting and I'll guide you through the process personally.","Se precisar de ajuda, me mande uma mensagem: marcamos uma reunião e te acompanho diretamente no processo."],
+["Lo que se activa","What you unlock","O que é ativado"],
+["Herramientas que normalmente pagarías por separado.","Tools you'd normally pay for separately.","Ferramentas que você normalmente pagaria separadamente."],
+["Todas juntas, conectadas a tu cuenta. Si eres nuevo, te dan estructura para avanzar mejor. Si ya operas, te ahorran suscripciones. ¿Necesitas algo distinto? Cuéntamelo: lo organizamos y lo adaptamos a ti.","All together, connected to your account. If you're new, they give you structure. If you already trade, they save you subscriptions. Need something different? Tell me: we'll organize it and tailor it to you.","Todas juntas, conectadas à sua conta. Se você é novo, elas te dão estrutura. Se já opera, economiza assinaturas. Precisa de algo diferente? Me conte: organizamos e adaptamos para você."],
+["Gráficos","Charts","Gráficos"],
+["La versión Premium para analizar con todos los gráficos e indicadores, y operar desde el servidor de nuestro broker aliado.","The Premium version to analyze with every chart and indicator, and trade from our partner broker's server.","A versão Premium para analisar com todos os gráficos e indicadores, e operar a partir do servidor da nossa corretora parceira."],
+["Plataforma","Platform","Plataforma"],
+["Tu centro de trading: análisis de mercado, noticias, calendario económico, academia, eventos en vivo y comunidad, en una sola cuenta.","Your trading hub: market analysis, news, economic calendar, academy, live events and community, in one account.","Seu centro de trading: análise de mercado, notícias, calendário econômico, academia, eventos ao vivo e comunidade, em uma só conta."],
+["IA","AI","IA"],
+["Asistente y agente IA","AI assistant and agent","Assistente e agente de IA"],
+["Te ayuda a analizar el mercado, ordenar tus ideas y resolver dudas en tu proceso.","Helps you analyze the market, organize your ideas and answer your questions along the way.","Te ajuda a analisar o mercado, organizar suas ideias e tirar dúvidas no processo."],
+["Escáner","Scanner","Scanner"],
+["Escáner de mercado","Market scanner","Scanner de mercado"],
+["Encuentra oportunidades según tus criterios para que no tengas que buscarlas a mano.","Finds opportunities based on your criteria so you don't have to search by hand.","Encontra oportunidades segundo seus critérios para você não ter que procurar manualmente."],
+["Indicadores","Indicators","Indicadores"],
+["Indicadores premium","Premium indicators","Indicadores premium"],
+["Herramientas exclusivas que se habilitan con tu acceso completo.","Exclusive tools enabled with your full access.","Ferramentas exclusivas liberadas com seu acesso completo."],
+["Control","Tracking","Controle"],
+["Registra tus operaciones automáticamente para ver qué funciona y qué mejorar.","Logs your trades automatically so you can see what works and what to improve.","Registra suas operações automaticamente para ver o que funciona e o que melhorar."],
+["Qué incluye","What's included","O que inclui"],
+["Menos de 300 USD o 300 USD y más.","Under 300 USD or 300 USD and up.","Menos de 300 USD ou 300 USD e mais."],
+["Con 300 USD tienes el ecosistema completo. No es un pago: es tu capital, en tu cuenta de trading.","With 300 USD you get the full ecosystem. It's not a payment: it's your capital, in your trading account.","Com 300 USD você tem o ecossistema completo. Não é um pagamento: é o seu capital, na sua conta de trading."],
+["Menos de 300 USD","Under 300 USD","Menos de 300 USD"],
+["300 USD o más · acceso completo","300 USD or more · full access","300 USD ou mais · acesso completo"],
+["Sí","Yes","Sim"],["No","No","Não"],
+["Acceso parcial","Partial access","Acesso parcial"],
+["Completo","Full","Completo"],
+["IA y escáner","AI and scanner","IA e scanner"],
+["Bloqueados","Locked","Bloqueados"],
+["Telegram con ideas de trading","Telegram with trading ideas","Telegram com ideias de trading"],
+["Acompañamiento personal","Personal support","Acompanhamento pessoal"],
+["Ya operas en otro broker","Already with another broker","Já opera em outra corretora"],
+["Trae tu capital y suma todo el ecosistema","Bring your capital and add the whole ecosystem","Traga seu capital e some todo o ecossistema"],
+["Crea tu cuenta con nuestro broker aliado","Open your account with our partner broker","Crie sua conta com nossa corretora parceira"],
+["Registro y verificación de identidad.","Sign-up and identity verification.","Cadastro e verificação de identidade."],
+["Mueve tu capital","Move your capital","Mova seu capital"],
+["Retira de tu broker actual y deposita desde 300 USD.","Withdraw from your current broker and deposit from 300 USD.","Saque da sua corretora atual e deposite a partir de 300 USD."],
+["Enlaza tu cuenta en el journal","Link your account in the journal","Vincule sua conta no journal"],
+["Y sigue operando, ahora con todas las herramientas.","And keep trading, now with all the tools.","E continue operando, agora com todas as ferramentas."],
+["Eres nuevo","New to trading","Você é novo"],
+["Empieza con estructura desde el día 1","Start with structure from day 1","Comece com estrutura desde o dia 1"],
+["La academia, las sesiones en vivo y el acompañamiento te ayudan a entender el mercado antes de arriesgar. Empieza con el mínimo, aprende con las herramientas y avanza a tu ritmo.","The academy, live sessions and personal support help you understand the market before taking risks. Start with the minimum, learn with the tools and move at your own pace.","A academia, as sessões ao vivo e o acompanhamento te ajudam a entender o mercado antes de arriscar. Comece com o mínimo, aprenda com as ferramentas e avance no seu ritmo."],
+["Escribirle a Kimberly","Message Kimberly","Falar com a Kimberly"],
+["Lo que nos preguntan antes de empezar.","What people ask before they start.","O que nos perguntam antes de começar."],
+["¿Los 300 USD son un pago?","Is the 300 USD a payment?","Os 300 USD são um pagamento?"],
+["No. Es capital en tu propia cuenta de trading. Lo usas para operar.","No. It's capital in your own trading account. You use it to trade.","Não. É capital na sua própria conta de trading. Você usa para operar."],
+["¿Por qué tengo que enlazar mi cuenta en el journal?","Why do I need to link my account in the journal?","Por que preciso vincular minha conta no journal?"],
+["Así tus operaciones quedan registradas en XMP y podemos verificar que tu cuenta tiene depósito para habilitar el acceso completo.","That way your trades are logged in XMP and we can verify your account is funded to enable full access.","Assim suas operações ficam registradas na XMP e podemos verificar que sua conta tem depósito para liberar o acesso completo."],
+["¿Puedo depositar menos de 300 USD?","Can I deposit less than 300 USD?","Posso depositar menos de 300 USD?"],
+["Sí. Tendrás TradingView Premium, acceso parcial a XMP y el canal de Telegram con ideas de trading. Cuando completes 300 USD, se activa todo.","Yes. You'll get TradingView Premium, partial XMP access and the Telegram channel with trading ideas. Once you reach 300 USD, everything unlocks.","Sim. Você terá TradingView Premium, acesso parcial à XMP e o canal do Telegram com ideias de trading. Ao completar 300 USD, tudo é ativado."],
+["¿Necesito experiencia?","Do I need experience?","Preciso de experiência?"],
+["No. Si eres nuevo, la academia, las sesiones en vivo y el acompañamiento te ayudan a empezar con estructura.","No. If you're new, the academy, live sessions and personal support help you start with structure.","Não. Se você é novo, a academia, as sessões ao vivo e o acompanhamento te ajudam a começar com estrutura."],
+["¿Las herramientas garantizan resultados?","Do the tools guarantee results?","As ferramentas garantem resultados?"],
+["No. Son herramientas de apoyo para tu análisis. Los resultados dependen del mercado y de tus decisiones, y puedes perder dinero.","No. They're tools to support your analysis. Results depend on the market and your decisions, and you can lose money.","Não. São ferramentas de apoio para sua análise. Os resultados dependem do mercado e das suas decisões, e você pode perder dinheiro."],
+["Activa todo tu ecosistema hoy.","Unlock your whole ecosystem today.","Ative todo o seu ecossistema hoje."],
+["Si necesitas ayuda, déjame un mensaje y te acompaño en el proceso.","If you need help, send me a message and I'll guide you through the process.","Se precisar de ajuda, me mande uma mensagem e te acompanho no processo."],
+["<b>Advertencia de riesgo:</b> los CFD son instrumentos complejos y conllevan un alto riesgo de perder dinero rápidamente debido al apalancamiento. Considera si comprendes cómo funcionan y si puedes asumir el riesgo de perder tu dinero. «x10» es un objetivo de crecimiento, no una promesa de resultados. Este contenido es informativo y no constituye asesoramiento de inversión.","<b>Risk warning:</b> CFDs are complex instruments and come with a high risk of losing money rapidly due to leverage. Consider whether you understand how they work and whether you can afford the risk of losing your money. \"x10\" is a growth goal, not a promise of results. This content is informational and is not investment advice.","<b>Aviso de risco:</b> CFDs são instrumentos complexos e envolvem alto risco de perder dinheiro rapidamente devido à alavancagem. Considere se você entende como funcionam e se pode assumir o risco de perder seu dinheiro. \"x10\" é uma meta de crescimento, não uma promessa de resultados. Este conteúdo é informativo e não constitui recomendação de investimento."],
+["Servicios de broker prestados por nuestro broker aliado, <b>TradeQuo</b>. Servicio no disponible para menores de edad. Al escribirnos aceptas que te contactemos por WhatsApp y email; puedes darte de baja cuando quieras. TradingView es una marca de su propietario.","Brokerage services provided by our partner broker, <b>TradeQuo</b>. Not available to minors. By messaging us you agree to be contacted by WhatsApp and email; you can opt out at any time. TradingView is a trademark of its owner.","Serviços de corretagem prestados pela nossa corretora parceira, <b>TradeQuo</b>. Não disponível para menores de idade. Ao nos escrever, você aceita ser contatado por WhatsApp e e-mail; pode cancelar quando quiser. TradingView é uma marca de seu proprietário."]
+];
+const META = {es:["Scale x10 · Traders","es"],en:["Scale x10 · Traders","en"],pt:["Scale x10 · Traders","pt-BR"]};
+const norm = s => s.replace(/\s+/g," ").trim();
+const IDX = {}; T.forEach((r,i)=>IDX[norm(r[0])]=i);
+const NODES = [];
+document.querySelectorAll("header a, main *, footer p").forEach(el=>{
+  const k = IDX[norm(el.innerHTML)];
+  if (k !== undefined) NODES.push([el,k]);
+});
+function setLang(l){
+  const c = {es:0,en:1,pt:2}[l] ?? 0;
+  NODES.forEach(([el,k])=>{ el.innerHTML = T[k][c]; });
+  document.documentElement.lang = META[l][1];
+  const wa = WHATSAPP ? "https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent(WA_MSG[l]) : "https://t.me/kimberlytq1";
+  document.querySelectorAll("[data-wa]").forEach(a=>{a.href=wa;a.target="_blank";a.rel="noopener"});
+  document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed", b.dataset.lang===l));
+  try{ localStorage.setItem("lang", l) }catch(e){}
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+let startLang = "es";
+const q = new URLSearchParams(location.search).get("lang");
+try{ startLang = q || localStorage.getItem("lang") || "es" }catch(e){ startLang = q || "es" }
+setLang(["es","en","pt"].includes(startLang) ? startLang : "es");
+</script>
+</body></html>
