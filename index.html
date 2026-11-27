@@ -181,7 +181,9 @@ section.block{padding-block:5.5rem 0}
 .lead-card .cap b{display:block;font:800 1.6rem var(--display)}
 .lead-card .cap span{color:var(--muted);font-size:.9rem}
 .lead-card .ov{display:flex;flex-direction:column;justify-content:center;padding:2.4rem}
-.lead-card .ov .quote{font-size:clamp(1.3rem,2.4vw,1.9rem);max-width:36rem}
+.lead-card .ov .quote{font-size:clamp(1.2rem,2vw,1.6rem);max-width:36rem}
+.lead-card .ov .roles{grid-template-columns:1fr 1fr!important;margin-top:1.6rem;gap:.8rem}
+.lead-card .ov .roles>div{padding:1rem}
 @media (max-width:900px){.team .roles{grid-template-columns:1fr 1fr}.lead-card{grid-template-columns:1fr}.lead-card .ov{padding:1.6rem}}
 @media (max-width:560px){.team .roles{grid-template-columns:1fr}}
 .roles{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-content:start}
@@ -329,6 +331,8 @@ footer p+p{margin-top:.6rem}
   .final{padding:2.4rem 1.2rem}
   .phone{max-width:290px}
 }
+@media (max-width:900px){.phone{aspect-ratio:auto;margin-bottom:2.2rem}.screen{height:auto;padding-bottom:14px}}
+@media (max-width:560px){.lead-card .ov .roles{grid-template-columns:1fr!important}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 </style>
 
@@ -420,13 +424,14 @@ footer p+p{margin-top:.6rem}
           <img src="expo-dubai.jpg" alt="Kimberly en el Forex Traders Expo & Summit Dubai 2026" onerror="this.remove()">
           <div class="cap"><b>Kimberly</b><span data-i="e_role">Lidera la estrategia de partners · 7 años en los mercados</span></div>
         </div>
-        <div class="ov"><p class="quote" data-i="e_q">“Mi trabajo es que tú te enfoques en tu comunidad. Del sistema nos encargamos nosotros.”</p></div>
-      </div>
+        <div class="ov"><p class="quote" data-i="e_q">“Mi trabajo es que tú te enfoques en tu comunidad. Del sistema nos encargamos nosotros.”</p>
       <div class="roles">
         <div><div class="ic"><svg class="i"><use href="#i-target"/></svg></div><h4 data-i="r1t">Estrategia y cuentas</h4><p data-i="r1p">Diseña tu plan, tus metas y tu estructura de IB y sub-IB.</p></div>
         <div><div class="ic"><svg class="i"><use href="#i-cog"/></svg></div><h4 data-i="r2t">Tecnología y automatización</h4><p data-i="r2p">Monta tus canales, bots, indicadores, escáneres y tu app.</p></div>
         <div><div class="ic"><svg class="i"><use href="#i-pen"/></svg></div><h4 data-i="r3t">Contenido y crecimiento</h4><p data-i="r3p">Crea las piezas, campañas y eventos que traen clientes.</p></div>
         <div><div class="ic"><svg class="i"><use href="#i-users"/></svg></div><h4 data-i="r4t">Onboarding y soporte</h4><p data-i="r4p">Acompaña a tus clientes desde el registro hasta su primera operación.</p></div>
+      </div>
+        </div>
       </div>
     </div>
   </section>
